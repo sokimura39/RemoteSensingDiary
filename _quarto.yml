@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "RemoteSensingDiary"
+  title: "CASA0023 - Remote Sensing Learning Diary"
   author: "Soki Kimura"
   date: "01/01/2024"
   chapters:

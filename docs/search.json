@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "RemoteSensingDiary",
+    "title": "CASA0023 - Remote Sensing Learning Diary",
     "section": "",
     "text": "About the Website"
   },
@@ -53,41 +53,41 @@
     "href": "02_portfolio.html#the-presentation",
     "title": "2  Portfolio",
     "section": "2.1 The presentation",
-    "text": "2.1 The presentation\nhttps://sokimura39.github.io/RS_sensor_presentation/\nStill under construction, but would like to share the link anyway!"
+    "text": "2.1 The presentation\n\n\n\n\n\n\n\n\nStill under construction, but would like to share the link anyway!"
   },
   {
     "objectID": "index.html#about-me",
     "href": "index.html#about-me",
-    "title": "RemoteSensingDiary",
+    "title": "CASA0023 - Remote Sensing Learning Diary",
     "section": "About me",
     "text": "About me\nI am Soki Kimura, a master’s student at the Bartlett Centre for Advanced Spatial Analysis."
   },
   {
     "objectID": "index.html#about-this-website",
     "href": "index.html#about-this-website",
-    "title": "RemoteSensingDiary",
+    "title": "CASA0023 - Remote Sensing Learning Diary",
     "section": "About this website",
-    "text": "About this website\nThis is the learning diary for the CASA0023 Remote Sensing Cities and Environment module led by Dr. Andy Maclachlan.\nMore infomation coming up in the future weeks!"
+    "text": "About this website\nThis is the learning diary for the CASA0023 Remote Sensing Cities and Environment module led by Dr. Andy Maclachlan.\nMore information coming up in the future weeks!"
   },
   {
     "objectID": "01_intro.html#summary",
     "href": "01_intro.html#summary",
     "title": "1  Getting Started with Remote Sensing",
     "section": "1.1 Summary",
-    "text": "1.1 Summary\nSatellites can see what the human eye cannot! One illustrative example is the near-infrared band that is reflected strongly by vegetation. With combination to other bands, you can tell vegetation from the other greens.\n(Image of False Color - Infrared)\nThe atmosphere impacts the satellite image, with windows that can .\nMeanwhile the astronomers have put their telescope in outer space to avoid the atmosphere (Why a Telescope in Space? - NASA Science)"
+    "text": "1.1 Summary\nRemote Sensing: acquiring information from a distance (NASA 2019). There is a huge number of satellites carrying sensors that observe the earth.\n\n1.1.1 Characteristics of Satellite Imagery\nThe data that can be acquired from remote sensing is interesting! Few things that caught my attention:\n\nThe availability of data is amazing. The whole globe is covered every day, including areas impossible to be accessed by humans.\nUsing different wavelengths let us see what the human eye cannot. For instance, near infrared lets us differentiate vegetation from other “green stuff.\n\n\n\n\nA false color image of NYC and the Hudson Valley using NIR bands, where vegetation appears red\n\n\n\n\n1.1.2 Interaction with atmosphere\nThe atmosphere impacts the satellite image, which we must account for. There are a few “windows” that electromagnetic waves with certain wavelengths can pass through: the most notable one being the optical window, and the radio window. We must also consider the scattering for the wavelengths that do pass by. We have to consider these interactions with atmosphere when we use data, but nowadays software does the hard work for us.\n\n\n\nAtmospheric Windows from GISGeography (2017)\n\n\nMeanwhile the astronomers have put their telescope in outer space to avoid the atmosphere\n\n\n\nThe Hubble Space Telescope in outer space\n\n\n\n\n1.1.3 Resolutions of Satellite Imagery\nResolutions for satellite imagery has different dimensions of resolutions, something I did not think about before.\n\nSpatial Resolution: the size of each pixel within the image. Higher resolution means you can see the surface of the earth with more detail. This was the only type that came into my mind before this lecture.\nSpectral Resolution: the number of bands of different wavelengths an observation has. This includes visible light such as red, green, and blue, but spans into wavelengths undetectable by the human eye. Some hyperspectral images have more than 200! The better spectral resolution, the better it is to differentiate the materials.\nRadiometric Resolution: is the amount of information in each pixel, the higher the value the more potential values it has. Distinguishing slight changes are made possible with high radiometric resolution. I feel this is a similar idea to the color depth, where 24-bit colors have more variety than 8-bit colors.\nTemporal Resolution: the frequency the data is collected, or the frequency the satellite flies over each area. SENTINEL-2 has 2 satellites, doubling the temporal resolutions compared to having only one.\n\nThese often come with trade-offs (detailed data comes at the cost of lower frequency) therefore we must be aware which is important for analysis that we make."
   },
   {
     "objectID": "01_intro.html#applications",
     "href": "01_intro.html#applications",
     "title": "1  Getting Started with Remote Sensing",
     "section": "1.2 Applications",
-    "text": "1.2 Applications\nThe applications of satellite imagery is huge:"
+    "text": "1.2 Applications\nThe applications of satellite imagery is huge! Advanced use-cases include:\n\ndetect illegal logging in the Amazon (Teixeira 2022)\npredict and assess natural hazards (Gillespie et al. 2007)\nassess the damage of conflicts (Yerushalmy 2023)"
   },
   {
     "objectID": "01_intro.html#reflection",
     "href": "01_intro.html#reflection",
     "title": "1  Getting Started with Remote Sensing",
     "section": "1.3 Reflection",
-    "text": "1.3 Reflection\nThe first impression on the term remote sensing was that we are going to do something about sensors located at the surface (which is what I assume the people at the MSc Connected Environments are doing). Nonetheless, the applications of satellite imagery is very fascinating!"
+    "text": "1.3 Reflection\nThe first impression on the term remote sensing was that we are going to do something about sensors located at the surface (which is what I assume the people at the MSc Connected Environments are doing). Nonetheless, the applications of satellite imagery is very fascinating!\n\n1.3.1 An Additional Note\nRecent news from my home country of Japan, hit by an earthquake and tsunami on New Year’s Day, featured satellite imagery showing the damage by the disaster. Japan is situated within the Pacific Ring of Fire, and is under an emergent threat of a massive earthquake hitting Tokyo and the most of the Pacific region (70% chance within the next 30 years). Now that I actually saw remote sensing in action, I feel motivated toward learning to make use of this technology.\n\n\n\n\n\nGillespie, Thomas W., Jasmine Chu, Elizabeth Frankenberg, and Duncan Thomas. 2007. “Assessment and Prediction of Natural Hazards from Satellite Imagery.” Progress in Physical Geography: Earth and Environment 31 (5): 459–70. https://doi.org/10.1177/0309133307083296.\n\n\nGISGeography. 2017. “The Atmospheric Window in Remote Sensing.” GIS Geography. https://gisgeography.com/atmospheric-window/.\n\n\nNASA. 2019. “What Is Remote Sensing?  Earthdata.” Backgrounder. https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing.\n\n\nTeixeira, Fabio. 2022. “In Brazil, Satellites Help Scientists Target Amazon Forest Losses.” Thomas Reuters Foundation News. https://news.trust.org/item/20220406135051-ut6cr/.\n\n\nYerushalmy, Jonathan. 2023. “Gaza Before and After: Satellite Images Show Destruction Following Israeli Airstrikes.” The Guardian, October. https://www.theguardian.com/world/2023/oct/27/gaza-before-and-after-satellite-images-show-destruction-after-israeli-airstrikes."
   }
 ]

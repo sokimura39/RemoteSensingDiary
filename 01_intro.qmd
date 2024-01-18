@@ -1,20 +1,57 @@
 # Getting Started with Remote Sensing
 
-
 ## Summary
 
-Satellites can see what the human eye cannot! One illustrative example is the near-infrared band that is reflected strongly by vegetation. With combination to other bands, you can tell vegetation from the other greens.
+**Remote Sensing**: acquiring information from a distance [@nasa2019]. There is a huge number of satellites carrying sensors that observe the earth.
 
-(Image of False Color - Infrared)
+### Characteristics of Satellite Imagery
 
-The atmosphere impacts the satellite image, with windows that can .
+The data that can be acquired from remote sensing is interesting! Few things that caught my attention:
 
-Meanwhile the astronomers have put their telescope in outer space to avoid the atmosphere ([Why a Telescope in Space? - NASA Science](https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/))
+-   The availability of data is amazing. The whole globe is covered every day, including areas impossible to be accessed by humans.
+-   Using different wavelengths let us see what the human eye cannot. For instance, near infrared lets us differentiate vegetation from other "green stuff.
+
+![A false color image of NYC and the Hudson Valley using NIR bands, where vegetation appears red](week1/NYC_infrared.png)
+
+### Interaction with atmosphere
+
+The atmosphere impacts the satellite image, which we must account for. There are a few "windows" that electromagnetic waves with certain wavelengths can pass through: the most notable one being the optical window, and the radio window. We must also consider the scattering for the wavelengths that do pass by. We have to consider these interactions with atmosphere when we use data, but nowadays software does the hard work for us.
+
+![Atmospheric Windows from @gisgeography2017](week1/atmospheric_windows.png)
+
+Meanwhile the astronomers have put [their telescope in outer space to avoid the atmosphere](https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/)
+
+![The Hubble Space Telescope in outer space](week1/hubble_telescope.webp){width=50%}
+
+### Resolutions of Satellite Imagery
+
+Resolutions for satellite imagery has different dimensions of resolutions, something I did not think about before.
+
+-   **Spatial Resolution**: the size of each pixel within the image. Higher resolution means you can see the surface of the earth with more detail. This was the only type that came into my mind before this lecture.
+-   **Spectral Resolution**: the number of bands of different wavelengths an observation has. This includes visible light such as red, green, and blue, but spans into wavelengths undetectable by the human eye. Some *hyperspectral* images have more than 200! The better spectral resolution, the better it is to differentiate the materials.
+-   **Radiometric Resolution**: is the amount of information in each pixel, the higher the value the more potential values it has. Distinguishing slight changes are made possible with high radiometric resolution. I feel this is a similar idea to the color depth, where 24-bit colors have more variety than 8-bit colors.
+-   **Temporal Resolution**: the frequency the data is collected, or the frequency the satellite flies over each area. SENTINEL-2 has 2 satellites, doubling the temporal resolutions compared to having only one.
+
+These often come with trade-offs (detailed data comes at the cost of lower frequency) therefore we must be aware which is important for analysis that we make.
 
 ## Applications
 
-The applications of satellite imagery is huge:
+The applications of satellite imagery is huge! Advanced use-cases include:
+
+-   detect illegal logging in the Amazon [@teixeira2022]
+-   predict and assess natural hazards [@gillespie2007]
+-   assess the damage of conflicts [@yerushalmy2023]
 
 ## Reflection
 
 The first impression on the term *remote sensing* was that we are going to do something about sensors located at the surface (which is what I assume the people at the MSc Connected Environments are doing). Nonetheless, the applications of satellite imagery is very fascinating!
+
+
+### An Additional Note
+
+Recent news from my home country of Japan, hit by an earthquake and tsunami on New Year's Day, featured satellite imagery showing the damage by the disaster. Japan is situated within the Pacific Ring of Fire, and is under an emergent threat of a massive earthquake hitting Tokyo and the most of the Pacific region (70% chance within the next 30 years). 
+Now that I actually saw remote sensing in action, I feel motivated toward learning to make use of this technology. 
+
+{{< video https://youtu.be/lotzm1UNqb4?si=pD38jPE-kRAjbY0S >}}
+
+

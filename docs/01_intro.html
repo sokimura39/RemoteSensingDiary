@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -133,9 +152,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1.1</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#characteristics-of-satellite-imagery" id="toc-characteristics-of-satellite-imagery" class="nav-link" data-scroll-target="#characteristics-of-satellite-imagery"><span class="header-section-number">1.1.1</span> Characteristics of Satellite Imagery</a></li>
+  <li><a href="#interaction-with-atmosphere" id="toc-interaction-with-atmosphere" class="nav-link" data-scroll-target="#interaction-with-atmosphere"><span class="header-section-number">1.1.2</span> Interaction with atmosphere</a></li>
+  <li><a href="#resolutions-of-satellite-imagery" id="toc-resolutions-of-satellite-imagery" class="nav-link" data-scroll-target="#resolutions-of-satellite-imagery"><span class="header-section-number">1.1.3</span> Resolutions of Satellite Imagery</a></li>
+  </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">1.2</span> Applications</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">1.3</span> Reflection</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">1.3</span> Reflection</a>
+  <ul class="collapse">
+  <li><a href="#an-additional-note" id="toc-an-additional-note" class="nav-link" data-scroll-target="#an-additional-note"><span class="header-section-number">1.3.1</span> An Additional Note</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -161,20 +188,86 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="summary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
-<p>Satellites can see what the human eye cannot! One illustrative example is the near-infrared band that is reflected strongly by vegetation. With combination to other bands, you can tell vegetation from the other greens.</p>
-<p>(Image of False Color - Infrared)</p>
-<p>The atmosphere impacts the satellite image, with windows that can .</p>
-<p>Meanwhile the astronomers have put their telescope in outer space to avoid the atmosphere (<a href="https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/">Why a Telescope in Space? - NASA Science</a>)</p>
+<p><strong>Remote Sensing</strong>: acquiring information from a distance <span class="citation" data-cites="nasa2019">(<a href="99_references.html#ref-nasa2019" role="doc-biblioref">NASA 2019</a>)</span>. There is a huge number of satellites carrying sensors that observe the earth.</p>
+<section id="characteristics-of-satellite-imagery" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="characteristics-of-satellite-imagery"><span class="header-section-number">1.1.1</span> Characteristics of Satellite Imagery</h3>
+<p>The data that can be acquired from remote sensing is interesting! Few things that caught my attention:</p>
+<ul>
+<li>The availability of data is amazing. The whole globe is covered every day, including areas impossible to be accessed by humans.</li>
+<li>Using different wavelengths let us see what the human eye cannot. For instance, near infrared lets us differentiate vegetation from other “green stuff.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week1/NYC_infrared.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A false color image of NYC and the Hudson Valley using NIR bands, where vegetation appears red</figcaption>
+</figure>
+</div>
+</section>
+<section id="interaction-with-atmosphere" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="interaction-with-atmosphere"><span class="header-section-number">1.1.2</span> Interaction with atmosphere</h3>
+<p>The atmosphere impacts the satellite image, which we must account for. There are a few “windows” that electromagnetic waves with certain wavelengths can pass through: the most notable one being the optical window, and the radio window. We must also consider the scattering for the wavelengths that do pass by. We have to consider these interactions with atmosphere when we use data, but nowadays software does the hard work for us.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week1/atmospheric_windows.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Atmospheric Windows from <span class="citation" data-cites="gisgeography2017">GISGeography (<a href="99_references.html#ref-gisgeography2017" role="doc-biblioref">2017</a>)</span></figcaption>
+</figure>
+</div>
+<p>Meanwhile the astronomers have put <a href="https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/">their telescope in outer space to avoid the atmosphere</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week1/hubble_telescope.webp" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">The Hubble Space Telescope in outer space</figcaption>
+</figure>
+</div>
+</section>
+<section id="resolutions-of-satellite-imagery" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="resolutions-of-satellite-imagery"><span class="header-section-number">1.1.3</span> Resolutions of Satellite Imagery</h3>
+<p>Resolutions for satellite imagery has different dimensions of resolutions, something I did not think about before.</p>
+<ul>
+<li><strong>Spatial Resolution</strong>: the size of each pixel within the image. Higher resolution means you can see the surface of the earth with more detail. This was the only type that came into my mind before this lecture.</li>
+<li><strong>Spectral Resolution</strong>: the number of bands of different wavelengths an observation has. This includes visible light such as red, green, and blue, but spans into wavelengths undetectable by the human eye. Some <em>hyperspectral</em> images have more than 200! The better spectral resolution, the better it is to differentiate the materials.</li>
+<li><strong>Radiometric Resolution</strong>: is the amount of information in each pixel, the higher the value the more potential values it has. Distinguishing slight changes are made possible with high radiometric resolution. I feel this is a similar idea to the color depth, where 24-bit colors have more variety than 8-bit colors.</li>
+<li><strong>Temporal Resolution</strong>: the frequency the data is collected, or the frequency the satellite flies over each area. SENTINEL-2 has 2 satellites, doubling the temporal resolutions compared to having only one.</li>
+</ul>
+<p>These often come with trade-offs (detailed data comes at the cost of lower frequency) therefore we must be aware which is important for analysis that we make.</p>
+</section>
 </section>
 <section id="applications" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">1.2</span> Applications</h2>
-<p>The applications of satellite imagery is huge:</p>
+<p>The applications of satellite imagery is huge! Advanced use-cases include:</p>
+<ul>
+<li>detect illegal logging in the Amazon <span class="citation" data-cites="teixeira2022">(<a href="99_references.html#ref-teixeira2022" role="doc-biblioref">Teixeira 2022</a>)</span></li>
+<li>predict and assess natural hazards <span class="citation" data-cites="gillespie2007">(<a href="99_references.html#ref-gillespie2007" role="doc-biblioref">Gillespie et al. 2007</a>)</span></li>
+<li>assess the damage of conflicts <span class="citation" data-cites="yerushalmy2023">(<a href="99_references.html#ref-yerushalmy2023" role="doc-biblioref">Yerushalmy 2023</a>)</span></li>
+</ul>
 </section>
 <section id="reflection" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>
 <p>The first impression on the term <em>remote sensing</em> was that we are going to do something about sensors located at the surface (which is what I assume the people at the MSc Connected Environments are doing). Nonetheless, the applications of satellite imagery is very fascinating!</p>
+<section id="an-additional-note" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="an-additional-note"><span class="header-section-number">1.3.1</span> An Additional Note</h3>
+<p>Recent news from my home country of Japan, hit by an earthquake and tsunami on New Year’s Day, featured satellite imagery showing the damage by the disaster. Japan is situated within the Pacific Ring of Fire, and is under an emergent threat of a massive earthquake hitting Tokyo and the most of the Pacific region (70% chance within the next 30 years). Now that I actually saw remote sensing in action, I feel motivated toward learning to make use of this technology.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lotzm1UNqb4?si=pD38jPE-kRAjbY0S" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-gillespie2007" class="csl-entry" role="listitem">
+Gillespie, Thomas W., Jasmine Chu, Elizabeth Frankenberg, and Duncan Thomas. 2007. <span>“Assessment and Prediction of Natural Hazards from Satellite Imagery.”</span> <em>Progress in Physical Geography: Earth and Environment</em> 31 (5): 459–70. <a href="https://doi.org/10.1177/0309133307083296">https://doi.org/10.1177/0309133307083296</a>.
+</div>
+<div id="ref-gisgeography2017" class="csl-entry" role="listitem">
+GISGeography. 2017. <span>“The <span>Atmospheric</span> <span>Window</span> in <span>Remote</span> <span>Sensing</span>.”</span> <em>GIS Geography</em>. <a href="https://gisgeography.com/atmospheric-window/">https://gisgeography.com/atmospheric-window/</a>.
+</div>
+<div id="ref-nasa2019" class="csl-entry" role="listitem">
+NASA. 2019. <span>“What Is <span>Remote</span> <span>Sensing</span>? <span></span> <span>Earthdata</span>.”</span> Backgrounder. <a href="https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing">https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing</a>.
+</div>
+<div id="ref-teixeira2022" class="csl-entry" role="listitem">
+Teixeira, Fabio. 2022. <span>“In <span>Brazil</span>, Satellites Help Scientists Target <span>Amazon</span> Forest Losses.”</span> <em>Thomas Reuters Foundation News</em>. <a href="https://news.trust.org/item/20220406135051-ut6cr/">https://news.trust.org/item/20220406135051-ut6cr/</a>.
+</div>
+<div id="ref-yerushalmy2023" class="csl-entry" role="listitem">
+Yerushalmy, Jonathan. 2023. <span>“Gaza Before and After: Satellite Images Show Destruction Following <span>Israeli</span> Airstrikes.”</span> <em>The Guardian</em>, October. <a href="https://www.theguardian.com/world/2023/oct/27/gaza-before-and-after-satellite-images-show-destruction-after-israeli-airstrikes">https://www.theguardian.com/world/2023/oct/27/gaza-before-and-after-satellite-images-show-destruction-after-israeli-airstrikes</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

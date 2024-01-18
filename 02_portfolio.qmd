@@ -1,10 +1,16 @@
 # Portfolio
 
-This week, instead of a learning diary article, I made a presentation on the sensors available for remote sensing.
+This week, instead of a learning diary article, I am making a presentation on the sensors available for remote sensing.
+
+Using Quarto and Xaringan, we aim to create an online portfolio for my works!
 
 ## The presentation
 
-<https://sokimura39.github.io/RS_sensor_presentation/>
+```{r echo = FALSE, out.width='40%'}
+xaringanExtra::embed_xaringan(
+  url = "https://sokimura39.github.io/RS_sensor_presentation/",
+  ratio = "16:9")
+```
 
-Still under construction, but would like to share the link anyway!
+
 
