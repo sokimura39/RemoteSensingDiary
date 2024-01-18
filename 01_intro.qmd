@@ -1,9 +1,20 @@
 # Getting Started with Remote Sensing
 
-This is a book created from markdown and executable code.
 
-See @knuth84 for additional discussion of literate programming.
+## Summary
 
-```{r}
-1 + 1
-```
+Satellites can see what the human eye cannot! One illustrative example is the near-infrared band that is reflected strongly by vegetation. With combination to other bands, you can tell vegetation from the other greens.
+
+(Image of False Color - Infrared)
+
+The atmosphere impacts the satellite image, with windows that can .
+
+Meanwhile the astronomers have put their telescope in outer space to avoid the atmosphere ([Why a Telescope in Space? - NASA Science](https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/))
+
+## Applications
+
+The applications of satellite imagery is huge:
+
+## Reflection
+
+The first impression on the term *remote sensing* was that we are going to do something about sensors located at the surface (which is what I assume the people at the MSc Connected Environments are doing). Nonetheless, the applications of satellite imagery is very fascinating!

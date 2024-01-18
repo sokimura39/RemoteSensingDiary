@@ -1,9 +1,14 @@
-# Preface {.unnumbered}
+# About the Website {.unnumbered}
 
-This is a Quarto book.
+## About me
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+I am Soki Kimura, a master's student at the Bartlett Centre for Advanced Spatial Analysis.
 
-```{r}
-1 + 1
-```
+## About this website
+
+This is the learning diary for the [CASA0023 Remote Sensing Cities and Environment](https://andrewmaclachlan.github.io/CASA0023/) module led by Dr. Andy Maclachlan.
+
+More infomation coming up in the future weeks!
+
+
+

@@ -1,7 +1,10 @@
-# Summary
+# Portfolio
 
-In summary, this book has no content whatsoever.
+This week, instead of a learning diary article, I made a presentation on the sensors available for remote sensing.
 
-```{r}
-1 + 1
-```
+## The presentation
+
+<https://sokimura39.github.io/RS_sensor_presentation/>
+
+Still under construction, but would like to share the link anyway!
+
