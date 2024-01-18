@@ -8,9 +8,9 @@ book:
   date: "18/01/2024"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - 01_intro.qmd
+    - 02_portfolio.qmd
+    - 99_references.qmd
 
 bibliography: references.bib
 
