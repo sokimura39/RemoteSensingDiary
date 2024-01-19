@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RemoteSensingDiary - 1&nbsp; Getting Started with Remote Sensing</title>
+<title>CASA0023 - Remote Sensing Learning Diary - 1&nbsp; Getting Started with Remote Sensing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">RemoteSensingDiary</a> 
+      <a href="./">CASA0023 - Remote Sensing Learning Diary</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -158,7 +158,10 @@ div.csl-indent {
   <li><a href="#interaction-with-atmosphere" id="toc-interaction-with-atmosphere" class="nav-link" data-scroll-target="#interaction-with-atmosphere"><span class="header-section-number">1.1.2</span> Interaction with atmosphere</a></li>
   <li><a href="#resolutions-of-satellite-imagery" id="toc-resolutions-of-satellite-imagery" class="nav-link" data-scroll-target="#resolutions-of-satellite-imagery"><span class="header-section-number">1.1.3</span> Resolutions of Satellite Imagery</a></li>
   </ul></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">1.2</span> Applications</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">1.2</span> Applications</a>
+  <ul class="collapse">
+  <li><a href="#analysis-on-new-york-city" id="toc-analysis-on-new-york-city" class="nav-link" data-scroll-target="#analysis-on-new-york-city"><span class="header-section-number">1.2.1</span> Analysis on New York City</a></li>
+  </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">1.3</span> Reflection</a>
   <ul class="collapse">
   <li><a href="#an-additional-note" id="toc-an-additional-note" class="nav-link" data-scroll-target="#an-additional-note"><span class="header-section-number">1.3.1</span> An Additional Note</a></li>
@@ -212,7 +215,7 @@ div.csl-indent {
 <figcaption class="figure-caption">Atmospheric Windows from <span class="citation" data-cites="gisgeography2017">GISGeography (<a href="99_references.html#ref-gisgeography2017" role="doc-biblioref">2017</a>)</span></figcaption>
 </figure>
 </div>
-<p>Meanwhile the astronomers have put <a href="https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/">their telescope in outer space to avoid the atmosphere</a></p>
+<p>Meanwhile the astronomers have put <a href="https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/">their telescope in outer space to avoid the atmosphere</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="week1/hubble_telescope.webp" class="img-fluid figure-img" style="width:50.0%"></p>
@@ -240,6 +243,101 @@ div.csl-indent {
 <li>predict and assess natural hazards <span class="citation" data-cites="gillespie2007">(<a href="99_references.html#ref-gillespie2007" role="doc-biblioref">Gillespie et al. 2007</a>)</span></li>
 <li>assess the damage of conflicts <span class="citation" data-cites="yerushalmy2023">(<a href="99_references.html#ref-yerushalmy2023" role="doc-biblioref">Yerushalmy 2023</a>)</span></li>
 </ul>
+<section id="analysis-on-new-york-city" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="analysis-on-new-york-city"><span class="header-section-number">1.2.1</span> Analysis on New York City</h3>
+<p>For my first satellite imagery analysis, I chose New York City, USA.I have sampled areas with different land cover and checked the difference in reflectance, and compared observations from Landsat-8 and Sentinel-2. The following places were sampled, representing each of the land coverages.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Land Coverage</th>
+<th>Sampled Place</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Forest</td>
+<td>Northwest Forest, Van Cortlandt Park, Bronx</td>
+</tr>
+<tr class="even">
+<td>Grass</td>
+<td>Parade Ground, Van Cortlandt Park, Bronx</td>
+</tr>
+<tr class="odd">
+<td>High Reflection Urban</td>
+<td>Industry City, Brooklyn</td>
+</tr>
+<tr class="even">
+<td>Urban</td>
+<td>Midtown East, Manhattan</td>
+</tr>
+<tr class="odd">
+<td>Water</td>
+<td>Jacqueline Kennedy Onassis Reservoir, Central Park, Manhattan</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week1/sampled_locations.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Map of sampled places.</figcaption>
+</figure>
+</div>
+<p>I extracted pixels from Sentinel and Landsat within these areas, and analysed the spectral profiles from both.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week1/allt_graph.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Spectral profiles from Sentinel and Landsat</figcaption>
+</figure>
+</div>
+<p>Wavelengths for each band is as follows in the two satellites, and we can see some slight differences.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Band</th>
+<th>Sentinel</th>
+<th>Landsat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 (Blue)</td>
+<td>492.4</td>
+<td>490</td>
+</tr>
+<tr class="even">
+<td>2 (Green)</td>
+<td>559.8</td>
+<td>560</td>
+</tr>
+<tr class="odd">
+<td>3 (Red)</td>
+<td>664.6</td>
+<td>665</td>
+</tr>
+<tr class="even">
+<td>4 (NIR)</td>
+<td>832.8</td>
+<td>842</td>
+</tr>
+<tr class="odd">
+<td>5 (SWIR)</td>
+<td>1613.7</td>
+<td>1610</td>
+</tr>
+<tr class="even">
+<td>6 (SWIR)</td>
+<td>2202.4</td>
+<td>2190</td>
+</tr>
+</tbody>
+</table>
+<p>Overall, we can see a similar pattern observed in the 2 satellite projects, with subtle differences observed in the infrared areas.</p>
+<p>Building on this difference, I feel it is possible to identify and classify the different land usages from satellite imagery.</p>
+</section>
 </section>
 <section id="reflection" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>

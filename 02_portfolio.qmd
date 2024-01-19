@@ -1,6 +1,6 @@
 # Portfolio
 
-This week, instead of a learning diary article, I am making a presentation on the sensors available for remote sensing.
+This week, instead of a learning diary article, I have made a portfolio on a sensor - the ALOS project launched by Japan.
 
 Using Quarto and Xaringan, we aim to create an online portfolio for my works!
 

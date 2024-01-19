@@ -19,7 +19,7 @@ The atmosphere impacts the satellite image, which we must account for. There are
 
 ![Atmospheric Windows from @gisgeography2017](week1/atmospheric_windows.png)
 
-Meanwhile the astronomers have put [their telescope in outer space to avoid the atmosphere](https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/)
+Meanwhile the astronomers have put [their telescope in outer space to avoid the atmosphere](https://science.nasa.gov/mission/hubble/overview/why-a-space-telescope-in-space/).
 
 ![The Hubble Space Telescope in outer space](week1/hubble_telescope.webp){width=50%}
 
@@ -41,6 +41,39 @@ The applications of satellite imagery is huge! Advanced use-cases include:
 -   detect illegal logging in the Amazon [@teixeira2022]
 -   predict and assess natural hazards [@gillespie2007]
 -   assess the damage of conflicts [@yerushalmy2023]
+
+### Analysis on New York City
+
+For my first satellite imagery analysis, I chose New York City, USA.I have sampled areas with different land cover and checked the difference in reflectance, and compared observations from Landsat-8 and Sentinel-2. The following places were sampled, representing each of the land coverages.
+
+| Land Coverage | Sampled Place |
+|---|---|
+| Forest | Northwest Forest, Van Cortlandt Park, Bronx |
+| Grass | Parade Ground, Van Cortlandt Park, Bronx |
+| High Reflection Urban | Industry City, Brooklyn |
+| Urban | Midtown East, Manhattan |
+| Water | Jacqueline Kennedy Onassis Reservoir, Central Park, Manhattan |
+
+![Map of sampled places.](week1/sampled_locations.png)
+
+I extracted pixels from Sentinel and Landsat within these areas, and analysed the spectral profiles from both.
+
+![Spectral profiles from Sentinel and Landsat](week1/allt_graph.png)
+
+Wavelengths for each band is as follows in the two satellites, and we can see some slight differences.
+
+| Band | Sentinel | Landsat |
+|---|---|---|
+| 1 (Blue) | 492.4 | 490 |
+| 2 (Green) | 559.8 | 560 |
+| 3 (Red) | 664.6 | 665 |
+| 4 (NIR) | 832.8 | 842 |
+| 5 (SWIR) | 1613.7 | 1610 | 
+| 6 (SWIR) | 2202.4 | 2190 |
+
+Overall, we can see a similar pattern observed in the 2 satellite projects, with subtle differences observed in the infrared areas. 
+
+Building on this difference, I feel it is possible to identify and classify the different land usages from satellite imagery.
 
 ## Reflection
 
