@@ -9,7 +9,7 @@
 The data that can be acquired from remote sensing is interesting! Few things that caught my attention:
 
 -   The availability of data is amazing. The whole globe is covered every day, including areas impossible to be accessed by humans.
--   Using different wavelengths let us see what the human eye cannot. For instance, near infrared lets us differentiate vegetation from other "green stuff.
+-   Using different wavelengths let us see what the human eye cannot. For instance, near infrared lets us differentiate vegetation from other "green stuff".
 
 ![A false color image of NYC and the Hudson Valley using NIR bands, where vegetation appears red](week1/NYC_infrared.png)
 

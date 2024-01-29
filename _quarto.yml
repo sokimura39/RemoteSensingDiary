@@ -10,9 +10,10 @@ book:
     - index.qmd
     - 01_intro.qmd
     - 02_portfolio.qmd
+    - 03_rs_data.qmd
     - 99_references.qmd
 
-bibliography: references.bib
+bibliography: learning_diary.bib
 
 format:
   html:

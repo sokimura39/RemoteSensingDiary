@@ -1,0 +1,49 @@
+# Remote Sensing Data Manipulation
+
+## Summary
+
+In order to use the remote sensing data most effectively, data manipulation is desired. This comes in two perspectives: correcting data to remove the impacts from unnecessary factors, and joining and enhansing data.
+
+### Data Correction
+
+The *raw* data fetched from satellites are subject to interference by environmental factors. 
+
+#### Atmospheric Correction
+
+#### Geometric Correction
+
+Geometric correction is manipulation to fit the earth observation data into a reference system. 
+
+**Orthorectification** or topographic correction is one aspect of this, correcting the image so that it is viewed at *nadir*.
+
+
+####
+
+
+
+### Data Joining and Enhancement
+
+We do not need to use the data as is, but are open to wrangling data for analysis as well.
+
+
+### Glossary
+
+There were a lot of new terminology introduced in this session. 
+
+#### Data Correction Vocabulary
+
+- **nadir**: looking straight down, not at an angle
+
+#### Data Enhancement Vocabulary
+
+- **Texture**: 
+- **PCA**:
+
+
+## Applications
+
+
+
+## Reflection
+
+After a few weeks, I am starting to understand what you can actually do with remote sensing data.
