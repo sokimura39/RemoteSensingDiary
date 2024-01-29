@@ -6,43 +6,71 @@ In order to use the remote sensing data most effectively, data manipulation is d
 
 ### Data Correction
 
-The *raw* data fetched from satellites are subject to interference by environmental factors. 
+The *raw* data fetched from satellites are subject to interference by environmental factors. Data correction is required to correctly analyse the satellite imagery obtained. The following explains the various aspects of data correction.
 
-#### Atmospheric Correction
+Thankfully, the contemporary satellite imagery prouducts come in **ARD: Analysis Ready Data** so I am expecting we don't need to worry too much about these jargons.
 
-#### Geometric Correction
+#### Atmospheric Correction {.unnumbered}
 
-Geometric correction is manipulation to fit the earth observation data into a reference system. 
-
-**Orthorectification** or topographic correction is one aspect of this, correcting the image so that it is viewed at *nadir*.
+Removing the effect of atmosphere which absorbs and scatters light, leading to haze (reduced contrast of image) and the adjacency effect (nearby pixels bleeding into each other).
 
 
-####
 
 
+
+#### Geometric Correction {.unnumbered}
+
+Geometric correction is manipulation to fit the earth observation data into a reference system. This is similar to the process of georeferencing analog maps [@skopyk2021].
+
+This is achieved by taking several reference points (Ground Control Points) on the imagery where the actual coordinates are known, and interpolating the areas in between [@jensen2016].
+
+\![Reference points on satellite imagery and the gold standard map (image from SEOS)(https://seos-project.eu/remotesensing/images/georeferenzieren.jpg)
+
+The actual mapping is done *backwards*, where points on the imagery are calculated from coordinates on the gold standard map, so that every point on the study area has its corresponding point on the imagery. This is modelled as follows.
+
+$$
+\begin{cases}
+x^i = a_0 + a_1x + a_2y+\epsilon_i \\
+y^i = b_0 + b_1x + b_2y+\epsilon_i \\
+\end{cases}
+$$
+
+-   $(x^i, y^i)$: coordinates on the satellite imagery
+-   $(x, y)$: coordinates on the gold standard map
+
+**Orthorectification** or topographic correction is one aspect of this, correcting the image so that it is viewed at *nadir*. One method is cosine correction, where the radiance is calculated as:
+
+$$
+L_H = L_T \frac{\cos \theta_O}{\cos i}
+$$
+
+-   $L_T$: radiance (TOA) from sloped terrain
+-   $\theta_O$: zenith angle of the sun
+-   $i$: sun's incidence angle (angle between rays and normal of surface)
+
+This will be important especially if using imagery from aircrafts flying at relatively low altitude compared to satellites.
 
 ### Data Joining and Enhancement
 
 We do not need to use the data as is, but are open to wrangling data for analysis as well.
 
-
 ### Glossary
 
-There were a lot of new terminology introduced in this session. 
+There were a lot of new terminology introduced in this session.
 
 #### Data Correction Vocabulary
 
-- **nadir**: looking straight down, not at an angle
+-   **nadir**: looking straight down, not at an angle.
+-   **zenith**: point vertically above observer. **Zenith Angle** is the angle between object and zenith.
+-   **incident angle**: the angle between the normal of the sloped terrain and the sun. If horizontal, this matches the zenith angle.
+-   **azimuth**: the compass angle of the sun, measured from the north. Same idea with [runway names](https://en.wikipedia.org/wiki/Runway#Naming)!
 
 #### Data Enhancement Vocabulary
 
-- **Texture**: 
-- **PCA**:
-
+-   **Texture**:
+-   **PCA**:
 
 ## Applications
-
-
 
 ## Reflection
 
