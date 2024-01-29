@@ -198,15 +198,35 @@ div.csl-indent {
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="data-correction"><span class="header-section-number">3.1.1</span> Data Correction</h3>
 <p>The <em>raw</em> data fetched from satellites are subject to interference by environmental factors. Data correction is required to correctly analyse the satellite imagery obtained. The following explains the various aspects of data correction.</p>
 <p>Thankfully, the contemporary satellite imagery prouducts come in <strong>ARD: Analysis Ready Data</strong> so I am expecting we don’t need to worry too much about these jargons.</p>
-<section id="atmospheric-correction" class="level4" data-number="3.1.1.1">
-<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="atmospheric-correction"><span class="header-section-number">3.1.1.1</span> Atmospheric Correction</h4>
+<section id="atmospheric-correction" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="atmospheric-correction">Atmospheric Correction</h4>
 <p>Removing the effect of atmosphere which absorbs and scatters light, leading to haze (reduced contrast of image) and the adjacency effect (nearby pixels bleeding into each other).</p>
+<section id="relative-correction" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="relative-correction">Relative Correction</h5>
+<p>Relative correction normalises intensities of bands within a single iamge or within multiple dates. The <strong>dark object subtraction (DOS)</strong> method assumes the darkest value in the image displays the effect of atmosphere, and subtracts that value from the whole image, leaving the actual surface reflectance value. Other methods such as <strong>pseudo-invariant features</strong> are proposed as well.</p>
+<p>While these simple methods can calibrate values within one imagery, the <em>relative</em> nature does not allow for comparison between different imagery - this is where absolute correction comes into play.</p>
 </section>
-<section id="geometric-correction" class="level4" data-number="3.1.1.2">
-<h4 data-number="3.1.1.2" class="anchored" data-anchor-id="geometric-correction"><span class="header-section-number">3.1.1.2</span> Geometric Correction</h4>
+<section id="absolute-correction" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="absolute-correction">Absolute Correction</h5>
+<p>Calculates the scaled absolute value for surface reflectance, enabling comparison between different places on earth. Multiple models are proposed, or a field work can be conducted to make the satellite observe the empirical line of spectrometer you laid out in the wild.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://ars.els-cdn.com/content/image/3-s2.0-B9780128158265000040-f04-09-9780128158265.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Example of atmospheric correction. Image from <span class="citation" data-cites="liang2020">Liang and Wang (<a href="99_references.html#ref-liang2020" role="doc-biblioref">2020</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="geometric-correction" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="geometric-correction">Geometric Correction</h4>
 <p>Geometric correction is manipulation to fit the earth observation data into a reference system. This is similar to the process of georeferencing analog maps <span class="citation" data-cites="skopyk2021">(<a href="99_references.html#ref-skopyk2021" role="doc-biblioref">Skopyk 2021</a>)</span>.</p>
 <p>This is achieved by taking several reference points (Ground Control Points) on the imagery where the actual coordinates are known, and interpolating the areas in between <span class="citation" data-cites="jensen2016">(<a href="99_references.html#ref-jensen2016" role="doc-biblioref">Jensen 2016</a>)</span>.</p>
-<p>![Reference points on satellite imagery and the gold standard map (image from SEOS)(https://seos-project.eu/remotesensing/images/georeferenzieren.jpg)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://seos-project.eu/remotesensing/images/georeferenzieren.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Reference points on satellite imagery and the gold standard map (image from SEOS)</figcaption>
+</figure>
+</div>
 <p>The actual mapping is done <em>backwards</em>, where points on the imagery are calculated from coordinates on the gold standard map, so that every point on the study area has its corresponding point on the imagery. This is modelled as follows.</p>
 <p><span class="math display">\[
 \begin{cases}
@@ -229,10 +249,15 @@ L_H = L_T \frac{\cos \theta_O}{\cos i}
 </ul>
 <p>This will be important especially if using imagery from aircrafts flying at relatively low altitude compared to satellites.</p>
 </section>
+<section id="radiometric-calibration" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="radiometric-calibration">Radiometric Calibration</h4>
+<p>The original satellite imagery stores data using <strong>digital numbers (DN)</strong> which has no units! This needs to be translated into values with meaningful units.</p>
+</section>
 </section>
 <section id="data-joining-and-enhancement" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="data-joining-and-enhancement"><span class="header-section-number">3.1.2</span> Data Joining and Enhancement</h3>
 <p>We do not need to use the data as is, but are open to wrangling data for analysis as well.</p>
+<p><strong>More coming soon!</strong></p>
 </section>
 <section id="glossary" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="glossary"><span class="header-section-number">3.1.3</span> Glossary</h3>
@@ -266,6 +291,9 @@ L_H = L_T \frac{\cos \theta_O}{\cos i}
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-jensen2016" class="csl-entry" role="listitem">
 Jensen, John R. 2016. <em>Introductory Digital Image Processing: A Remote Sensing Perspective / <span>John R</span>. <span>Jensen</span> (<span>University</span> of <span>South Carolina</span>).</em> 4th edition. Pearson Series in Geographic Information Science. <span>Glenview, IL</span>: <span>Pearson Education, Inc.</span>
+</div>
+<div id="ref-liang2020" class="csl-entry" role="listitem">
+Liang, Shunlin, and Jindi Wang, eds. 2020. <span>“Chapter 4 - <span>Atmospheric</span> Correction of Optical Imagery.”</span> In <em>Advanced <span>Remote Sensing</span> (<span>Second Edition</span>)</em>, 131–56. <span>Academic Press</span>. <a href="https://doi.org/10.1016/B978-0-12-815826-5.00004-0">https://doi.org/10.1016/B978-0-12-815826-5.00004-0</a>.
 </div>
 <div id="ref-skopyk2021" class="csl-entry" role="listitem">
 Skopyk, Brad. 2021. <span>“Georeferencing <span>Historical Maps</span>.”</span> <em>ArcGIS StoryMaps</em>. https://storymaps.arcgis.com/stories/dd75d0398f7d4ded924d303161895b8b.
