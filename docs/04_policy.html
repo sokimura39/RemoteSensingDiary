@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Soki Kimura">
-<meta name="dcterms.date" content="2024-01-01">
 
-<title>CASA0023 - Remote Sensing Learning Diary</title>
+<title>CASA0023 - Remote Sensing Learning Diary - 4&nbsp; Policy Implications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_intro.html" rel="next">
+<link href="./99_references.html" rel="next">
+<link href="./03_rs_data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About the Website</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_policy.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy Implications</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -102,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About the Website</span></a>
   </div>
 </li>
@@ -126,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_policy.html" class="sidebar-item-text sidebar-link">
+  <a href="./04_policy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy Implications</span></span></a>
   </div>
 </li>
@@ -146,11 +164,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-the-website" id="toc-about-the-website" class="nav-link active" data-scroll-target="#about-the-website">About the Website</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">4.1</span> Summary</a>
   <ul class="collapse">
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About me</a></li>
-  <li><a href="#about-this-website" id="toc-about-this-website" class="nav-link" data-scroll-target="#about-this-website">About this website</a></li>
+  <li><a href="#onenyc-2050" id="toc-onenyc-2050" class="nav-link" data-scroll-target="#onenyc-2050"><span class="header-section-number">4.1.1</span> OneNYC 2050</a></li>
+  <li><a href="#g7-sustainable-urban-development-ministers-meeting-communique" id="toc-g7-sustainable-urban-development-ministers-meeting-communique" class="nav-link" data-scroll-target="#g7-sustainable-urban-development-ministers-meeting-communique"><span class="header-section-number">4.1.2</span> G7 Sustainable Urban Development Ministers’ Meeting Communique</a></li>
   </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">4.2</span> Applications</a>
+  <ul class="collapse">
+  <li><a href="#resilience-against-natural-hazards" id="toc-resilience-against-natural-hazards" class="nav-link" data-scroll-target="#resilience-against-natural-hazards"><span class="header-section-number">4.2.1</span> Resilience against natural hazards</a></li>
+  <li><a href="#urban-morphology" id="toc-urban-morphology" class="nav-link" data-scroll-target="#urban-morphology"><span class="header-section-number">4.2.2</span> Urban morphology</a></li>
+  <li><a href="#socio-economic-factors" id="toc-socio-economic-factors" class="nav-link" data-scroll-target="#socio-economic-factors"><span class="header-section-number">4.2.3</span> Socio-economic factors</a></li>
+  </ul></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">4.3</span> Reflections</a></li>
   </ul>
 </nav>
     </div>
@@ -159,26 +184,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CASA0023 - Remote Sensing Learning Diary</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy Implications</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Soki Kimura </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -186,19 +199,128 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="about-the-website" class="level1 unnumbered">
-<h1 class="unnumbered">About the Website</h1>
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">About me</h2>
-<p>I am Soki Kimura, a master’s student at the Bartlett Centre for Advanced Spatial Analysis.</p>
+<p>This week, I will explore how the remote sensing data can be applied in the context of actual policies.</p>
+<p>I will explore 2 different policy documents; one at the municipal level and one at the international level. Browsing through 2 policy documents of different scales might lead to a better understanding of applications of EO data.</p>
+<section id="summary" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.1</span> Summary</h2>
+<p>The 2 documents I chose for this week’s practical are:</p>
+<ul>
+<li>(OneNYC 2050)[https://climate.cityofnewyork.us/reports/onenyc-2050/]</li>
+<li>(G7 Sustainable Urban Development Ministers’ Meeting Communiqué)[(https://www.mlit.go.jp/report/press/content/Communique_EN.pdf)]</li>
+</ul>
+<section id="onenyc-2050" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="onenyc-2050"><span class="header-section-number">4.1.1</span> OneNYC 2050</h3>
+<p>OneNYC 2050 addresses the challenges that come along for a sustainable, resilient and inclusive growth toward 2050, as one of the very few cities with growing population.</p>
+<p>The visions proposed in this document are as follows (excerpt from pp.46-47):</p>
+<ol type="1">
+<li>A vibrant democracy</li>
+<li>An inclusive economy</li>
+<li>Thriving neighbourhoods</li>
+<li>Healthy lives</li>
+<li>Equity and excellence in education</li>
+<li>A livable climate</li>
+<li>Efficient mobility</li>
+<li>Modern infrastructure</li>
+</ol>
+<p>The challenges addressed in this policy document is (p24):</p>
+<ol type="1">
+<li>Rising Unaffordability</li>
+<li>Economic Insecurity</li>
+<li>Wealth and Health Disparities</li>
+<li>A Climate Emergency</li>
+<li>Failing Infrastructure and Shifting Needs</li>
+<li>Threats to Democracy</li>
+</ol>
+<p>We can immediately see that most of the factors addressed are related to socio-economic factors, which seem to be difficult to observe from above the atmosphere.</p>
+<p>Impacts of climate change and infrastructure is one topic that seems to be more manageable by observing the morphology of the urban landscape.</p>
+<p>Application could be in the following areas:</p>
+<p><strong>Strengthening resilience toward infrastructure</strong></p>
+<p>This is a pretty straightforward one I guess, where we might be able to model potential hazards, and use the current data on infrastructure and elevation to measure the potential damage of disasters. Long-term observations may be used to measure the change in temperature, precipitation, and so forth.</p>
+<p><strong>Socio-economic features through earth observation</strong></p>
+<p>Since there is so much focus on the apparently unphysical characteristics of the urban landscape, I feel I should ask the question: is there a way to address socio-economic issues using infrastructure?</p>
+<p>We must recall New York is the site of the world-famous dispute between the great activist Jane Jacobs and the <em>master builder</em> Robert Moses <span class="citation" data-cites="paletta2016">(<a href="99_references.html#ref-paletta2016" role="doc-biblioref">Paletta 2016</a>)</span>, which sparked off from the plans for the Lower Manhattan Expressway which was to destroy the local environment. Some potential strategies may be: 1) how much amenity space demolished? (There should have been victims even after Washington Square Park was saved), and 2) are infrastructure casting negative impacts on the livability of the city (like, shadows cast on neighbourhoods?)</p>
+<p>We will explore methodology in the application section.</p>
 </section>
-<section id="about-this-website" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-website">About this website</h2>
-<p>This is the learning diary for the <a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023 Remote Sensing Cities and Environment</a> module led by Dr.&nbsp;Andy Maclachlan.</p>
-<p>More information coming up in the future weeks!</p>
+<section id="g7-sustainable-urban-development-ministers-meeting-communique" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="g7-sustainable-urban-development-ministers-meeting-communique"><span class="header-section-number">4.1.2</span> G7 Sustainable Urban Development Ministers’ Meeting Communique</h3>
+<p>Now I will look at an international agreement with focus on cities.</p>
+<p>The <a href="https://www.mlit.go.jp/report/press/content/Communique_EN.pdf">outcome document</a> for the G7 Sustainable Urban Development Ministers’ Meeting in Takamatsu, Kagawa, the second G7 ministerial meeting by ministers in charge of urban policies, held during the Japanese presidency of G7 in 2023.</p>
+<p>A niche policy document, yes. I specifically chose this one because:</p>
+<ol type="1">
+<li>it’s very recent (July 2023)</li>
+<li>it is drawing from other international agendas</li>
+<li>I was involved in the editing process just before starting my master’s course</li>
+</ol>
+<p>This addresses the issues we have in contemporary cities (in the G7 context), and I would want to see if anything can be related to remote sensing in general.</p>
+<p>This document addresses 3 overarching themes, having a total of 54 paragraphs:</p>
+<ol type="1">
+<li>Net-zero and resilient cities</li>
+<li>Inclusive cities</li>
+<li>Digitalisation in cities</li>
+</ol>
+<p>The few topics I thought remote sensing has a part to play:</p>
+<p><strong>Paragraph 15 - Biodiversity in cities:</strong></p>
+<blockquote class="blockquote">
+<p>… Green and blue space in cities is too often at risk of being lost due to urban development that is not biodiversity-inclusive; built areas are expanding faster than the population is growing, and unplanned, uncoordinated urban development around cities is consuming the natural environment and green and blue space. …</p>
+</blockquote>
+<p>This statement implies the problem lies in:</p>
+<ul>
+<li>the expansion of built-up areas faster than population growth</li>
+<li>urban sprawl destroying green and blue spaces</li>
+</ul>
+<p>and that these phenomena lead to a loss in biodiversity.</p>
+<p><strong>Paragraph 18 - Integration of land use policy and transport policy:</strong></p>
+<blockquote class="blockquote">
+<p>Integrating land use policies with transport policies is a good example of policy coordination.</p>
+</blockquote>
+<p>This comes down to building up areas that are accessible by public transport, the idea of <em>compact plus network</em> the Japanese are so keen about.</p>
+<p>The current situation of urban sprawl and loss of urban green and blue spaces may be observed using EO data. Using the long-term observation data (i.e.&nbsp;Landsat Project) we will be able to observe the growth of built-up areas over time, what type of land (vegetation, water, or else) it has consumed, and if it was a sprawl development or a more controlled one.</p>
+<p>The digitalisation part has a lot of interesting statements regarding open data, but not much was mentioned regarding EO data.</p>
+</section>
+</section>
+<section id="applications" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">4.2</span> Applications</h2>
+<p>I have identified a few topics that remote sensing may play a role.</p>
+<ul>
+<li>Resilience against natural hazards</li>
+<li>Growth of urban built-up areas and impact on green and blue spaces</li>
+<li>Land use and match with transportation</li>
+<li>Socio-economic factors and urban landscape</li>
+</ul>
+<p>The following are potential methodology that may be suitable for the analysis of areas.</p>
+<section id="resilience-against-natural-hazards" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="resilience-against-natural-hazards"><span class="header-section-number">4.2.1</span> Resilience against natural hazards</h3>
+<p><span class="citation" data-cites="ghaffarian2018">Ghaffarian, Kerle, and Filatova (<a href="99_references.html#ref-ghaffarian2018" role="doc-biblioref">2018</a>)</span> has provided a review on proxy parameters for disaster risk that can be extracted from satellite imagery. These include building height and material for vulnerablity against earthquakes, road network analysis for assessment of transport networks, and flood water levels and debris detection for flood risk assessment. <span class="citation" data-cites="rong2020">Rong et al. (<a href="99_references.html#ref-rong2020" role="doc-biblioref">2020</a>)</span> has used DSM data for hydrodyanamic simulation of flood risks.</p>
+<p>Data on the spatial characteristics of cities can be a useful way to assess flood and other disaster risk.</p>
+</section>
+<section id="urban-morphology" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="urban-morphology"><span class="header-section-number">4.2.2</span> Urban morphology</h3>
+</section>
+<section id="socio-economic-factors" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="socio-economic-factors"><span class="header-section-number">4.2.3</span> Socio-economic factors</h3>
+<p>Network analysis data Night-time lights data for economic analysis Building footprints</p>
+<p>Vegetation Elevation models Informal settlements are the hardest to do</p>
+</section>
+</section>
+<section id="reflections" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">4.3</span> Reflections</h2>
+<p>Having experience in the public sector, I sort of understand the difficulty of making policies and multilateral agreements. Even if stakeholders agree on the big picture, the individual statements do not necessarily align their interests, thus leading to dispute. When it comes to technical methodology, I doubt those decision-makers have the capability to debate in the first place.</p>
+<p>Nonetheless it is undeniably an important topic, so I believe this is where experts come into play, actually assessing policies based on the rules those policy documents have set up.</p>
+<p>I feel that remote sensing data has the potential to overcome some of the problems; one major cause of dispute among different stakeholders is the varying definitions and interpretations of topics on the international agenda. The nature of satellite imagery where all parts of the globe are sensed equally may contribute to solving common causes of disagreement such as lack of data, different people having different criteria and explanations, the problem of cost, and more.</p>
+<p>This was a very good exercise for me!</p>
 
 
-</section>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ghaffarian2018" class="csl-entry" role="listitem">
+Ghaffarian, Saman, Norman Kerle, and Tatiana Filatova. 2018. <span>“Remote <span>Sensing-Based Proxies</span> for <span>Urban Disaster Risk Management</span> and <span>Resilience</span>: <span>A Review</span>.”</span> <em>Remote Sensing</em> 10 (11): 1760. <a href="https://doi.org/10.3390/rs10111760">https://doi.org/10.3390/rs10111760</a>.
+</div>
+<div id="ref-paletta2016" class="csl-entry" role="listitem">
+Paletta, Anthony. 2016. <span>“Story of Cities #32: <span>Jane Jacobs</span> v <span>Robert Moses</span>, Battle of <span>New York</span>’s Urban Titans.”</span> <em>The Guardian</em>, April.
+</div>
+<div id="ref-rong2020" class="csl-entry" role="listitem">
+Rong, Youtong, Ting Zhang, Yanchen Zheng, Chunqi Hu, Ling Peng, and Ping Feng. 2020. <span>“Three-Dimensional Urban Flood Inundation Simulation Based on Digital Aerial Photogrammetry.”</span> <em>Journal of Hydrology</em> 584 (May): 124308. <a href="https://doi.org/10.1016/j.jhydrol.2019.124308">https://doi.org/10.1016/j.jhydrol.2019.124308</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -437,10 +559,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./03_rs_data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Remote Sensing Data Manipulation</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting Started with Remote Sensing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./99_references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

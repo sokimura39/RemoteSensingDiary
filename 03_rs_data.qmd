@@ -66,7 +66,8 @@ The original satellite imagery stores data using **digital numbers (DN)** which 
 
 We do not need to use the data as is, but are open to wrangling data for analysis as well.
 
-**More coming soon!**
+
+
 
 ### Glossary
 
@@ -85,6 +86,8 @@ There were a lot of new terminology introduced in this session.
 -   **PCA**:
 
 ## Applications
+
+Research papers addressing the
 
 ## Reflection
 

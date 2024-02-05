@@ -1,0 +1,145 @@
+# Policy Implications
+
+This week, I will explore how the remote sensing data can be applied in the context of actual policies.
+
+I will explore 2 different policy documents; one at the municipal level and one at the international level. Browsing through 2 policy documents of different scales might lead to a better understanding of applications of EO data.
+
+## Summary
+
+The 2 documents I chose for this week's practical are:
+
+- (OneNYC 2050)[https://climate.cityofnewyork.us/reports/onenyc-2050/]
+- (G7 Sustainable Urban Development Ministers' Meeting Communiqué)[(https://www.mlit.go.jp/report/press/content/Communique_EN.pdf)]
+
+### OneNYC 2050
+
+OneNYC 2050 addresses the challenges that come along for a sustainable, resilient and inclusive growth toward 2050, as one of the very few cities with growing population.
+
+The visions proposed in this document are as follows (excerpt from pp.46-47):
+
+1. A vibrant democracy
+2. An inclusive economy
+3. Thriving neighbourhoods
+4. Healthy lives
+5. Equity and excellence in education
+6. A livable climate
+7. Efficient mobility
+8. Modern infrastructure
+
+
+The challenges addressed in this policy document is (p24):
+
+1. Rising Unaffordability
+2. Economic Insecurity
+3. Wealth and Health Disparities
+4. A Climate Emergency
+5. Failing Infrastructure and Shifting Needs
+6. Threats to Democracy
+
+We can immediately see that most of the factors addressed are related to socio-economic factors, which seem to be difficult to observe from above the atmosphere.
+
+Impacts of climate change and infrastructure is one topic that seems to be more manageable by observing the morphology of the urban landscape.
+
+
+Application could be in the following areas:
+
+**Strengthening resilience toward infrastructure**
+
+This is a pretty straightforward one I guess, where we might be able to model potential hazards, and use the current data on infrastructure and elevation to measure the potential damage of disasters. Long-term observations may be used to measure the change in temperature, precipitation, and so forth.
+
+**Socio-economic features through earth observation**
+
+Since there is so much focus on the apparently unphysical characteristics of the urban landscape, I feel I should ask the question: is there a way to address socio-economic issues using infrastructure?
+
+We must recall New York is the site of the world-famous dispute between the great activist Jane Jacobs and the *master builder* Robert Moses [@paletta2016], which sparked off from the plans for the Lower Manhattan Expressway which was to destroy the local environment. Some potential strategies may be: 1) how much amenity space demolished? (There should have been victims even after Washington Square Park was saved), and 2) are infrastructure casting negative impacts on the livability of the city (like, shadows cast on neighbourhoods?)
+
+We will explore methodology in the application section.
+
+### G7 Sustainable Urban Development Ministers' Meeting Communique
+
+Now I will look at an international agreement with focus on cities.
+
+The [outcome document](https://www.mlit.go.jp/report/press/content/Communique_EN.pdf) for the G7 Sustainable Urban Development Ministers' Meeting in Takamatsu, Kagawa, the second G7 ministerial meeting by ministers in charge of urban policies, held during the Japanese presidency of G7 in 2023.
+
+A niche policy document, yes. I specifically chose this one because:
+
+1.  it's very recent (July 2023)
+2.  it is drawing from other international agendas
+3.  I was involved in the editing process just before starting my master's course
+
+This addresses the issues we have in contemporary cities (in the G7 context), and I would want to see if anything can be related to remote sensing in general.
+
+This document addresses 3 overarching themes, having a total of 54 paragraphs:
+
+1.  Net-zero and resilient cities
+2.  Inclusive cities
+3.  Digitalisation in cities
+
+The few topics I thought remote sensing has a part to play:
+
+**Paragraph 15 - Biodiversity in cities:**
+
+> ... Green and blue space in cities is too often at risk of being lost due to urban development that is not biodiversity-inclusive; built areas are expanding faster than the population is growing, and unplanned, uncoordinated urban development around cities is consuming the natural environment and green and blue space. ...
+
+This statement implies the problem lies in:
+
+-   the expansion of built-up areas faster than population growth
+-   urban sprawl destroying green and blue spaces
+
+and that these phenomena lead to a loss in biodiversity.
+
+**Paragraph 18 - Integration of land use policy and transport policy:**
+
+> Integrating land use policies with transport policies is a good example of policy coordination.
+
+This comes down to building up areas that are accessible by public transport, the idea of *compact plus network* the Japanese are so keen about.
+
+The current situation of urban sprawl and loss of urban green and blue spaces may be observed using EO data. Using the long-term observation data (i.e. Landsat Project) we will be able to observe the growth of built-up areas over time, what type of land (vegetation, water, or else) it has consumed, and if it was a sprawl development or a more controlled one.
+
+The digitalisation part has a lot of interesting statements regarding open data, but not much was mentioned regarding EO data.
+
+
+## Applications
+
+I have identified a few topics that remote sensing may play a role.
+
+- Resilience against natural hazards
+- Growth of urban built-up areas and impact on green and blue spaces
+- Land use and match with transportation
+- Socio-economic factors and urban landscape
+
+The following are potential methodology that may be suitable for the analysis of areas.
+
+### Resilience against natural hazards
+
+@ghaffarian2018 has provided a review on proxy parameters for disaster risk that can be extracted from satellite imagery. These include building height and material for vulnerablity against earthquakes, road network analysis for assessment of transport networks, and flood water levels and debris detection for flood risk assessment. @rong2020 has used DSM data for hydrodyanamic simulation of flood risks. 
+
+Data on the spatial characteristics of cities can be a useful way to assess flood and other disaster risk.
+
+### Urban morphology
+
+
+
+### Socio-economic factors
+
+
+
+Network analysis data
+Night-time lights data for economic analysis
+Building footprints
+
+Vegetation
+Elevation models
+Informal settlements are the hardest to do
+
+
+
+## Reflections
+
+Having experience in the public sector, I sort of understand the difficulty of making policies and multilateral agreements. Even if stakeholders agree on the big picture, the individual statements do not necessarily align their interests, thus leading to dispute. When it comes to technical methodology, I doubt those decision-makers have the capability to debate in the first place.
+
+Nonetheless it is undeniably an important topic, so I believe this is where experts come into play, actually assessing policies based on the rules those policy documents have set up.
+
+I feel that remote sensing data has the potential to overcome some of the problems; one major cause of dispute among different stakeholders is the varying definitions and interpretations of topics on the international agenda. The nature of satellite imagery where all parts of the globe are sensed equally may contribute to solving common causes of disagreement such as lack of data, different people having different criteria and explanations, the problem of cost, and more.
+
+This was a very good exercise for me!
