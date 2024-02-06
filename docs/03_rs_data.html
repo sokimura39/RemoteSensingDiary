@@ -263,6 +263,62 @@ L_H = L_T \frac{\cos \theta_O}{\cos i}
 <section id="data-joining-and-enhancement" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="data-joining-and-enhancement"><span class="header-section-number">3.1.2</span> Data Joining and Enhancement</h3>
 <p>We do not need to use the data as is, but are open to wrangling data for analysis as well.</p>
+<section id="joining" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="joining">Joining</h4>
+<p>Joining is the procedure of combining separate images from different data sources to cover the whole study area. Also called mosaicking. The algorithm behind this is called a histogram matching algorithm, where the 2 images are given similar brightness values.</p>
+</section>
+<section id="enhancements" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="enhancements">Enhancements</h4>
+<p>Images may be enhanced to improve the appearance or results of analysis.</p>
+<p>There are many enhancement methods. One simple method is <strong>contrast enhancement</strong> where image band not making use of the whole spectrum range are expanded so that the contrast is maximised.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.earthdatascience.org/images/earth-analytics/raster-data/raster-image-stretch-light.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Example of image stretch by contrast enhancement. Image from <span class="citation" data-cites="earthlab2018">EarthLab (<a href="99_references.html#ref-earthlab2018" role="doc-biblioref">2018</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="ratio-enhancements" class="level4" data-number="3.1.2.1">
+<h4 data-number="3.1.2.1" class="anchored" data-anchor-id="ratio-enhancements"><span class="header-section-number">3.1.2.1</span> Ratio enhancements</h4>
+<p>The one I found interesting was ratio enhancements, where the manipulation between different bands enabling us to gain insights from the results.</p>
+<p>One example of this is the normalised difference vegetation index (NDVI), where a high value indicates healthy vegetation. The calculation is as follows, and I was surprised how simple this value could be calculated!</p>
+<p><span class="math display">\[
+\text{NDVI} = \frac{\text{NIR}-\text{red}}{\text{NIR}+\text{red}}
+\]</span></p>
+<p>I have applied this to a dataset from Landsat 8 for southeast England, where I merged 2 datasets to cover a wider area.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week3/NDVI_london.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">NDVI of Southeast England</figcaption>
+</figure>
+</div>
+<p>It is interesting to see that you can make out the patch with low value on the right hand side which is Central London, and that you can see the vegetation has a range in its healthiness; if you look at the optical imagery it is hard to tell the differences between healthy and unhealthy vegetation.</p>
+<p>Let’s zoom in to the London Borough of Camden - home to two major patches of urban green space: Hampstead Heath and Regent’s Park.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week3/NDVI_camden.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">NDVI of the London Borough of Camden</figcaption>
+</figure>
+</div>
+<p>You can easily make out Regent’s Park and Primrose Hill at the bottom left and Hampstead Heath at the top, which are home to the healthiest patches of vegetation in this area. Smaller patches have smaller NDVI value, indicating they are unhealthier compared to that of parks. If you compare the scale to the bigger picture above, you can see that the maximum value is lower in Camden. Understandable, but it is great you can see the difference!</p>
+</section>
+<section id="other-techniques" class="level4" data-number="3.1.2.2">
+<h4 data-number="3.1.2.2" class="anchored" data-anchor-id="other-techniques"><span class="header-section-number">3.1.2.2</span> Other techniques</h4>
+<p>Other enhancement techniques covered include the following:</p>
+<ul>
+<li><em>Filtering</em> sharpens (high-pass) or averages (low-pass) surrounding cells in order to capture particular characteristics</li>
+<li><em>PCA</em> is a method of dimension reduction, taking multiple bands and combining them into a smaller number of bands.</li>
+<li><em>Texture</em> considers the difference of values between moving windows, allowing for edges of certain object to be clearer.</li>
+</ul>
+<p>I calculated the texture value using the red band for the London Borough of Camden, and the results are shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week3/textures_camden.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Texture of Camden</figcaption>
+</figure>
+</div>
+<p>I must admit it is difficult to make out individual differences, but you can see the areas around King’s Cross, St.&nbsp;Pancras and Euston stations having a smaller texture value. It seems to be successfully identifying the different characteristics of urban landscape!</p>
+</section>
 </section>
 <section id="glossary" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="glossary"><span class="header-section-number">3.1.3</span> Glossary</h3>
@@ -279,30 +335,45 @@ L_H = L_T \frac{\cos \theta_O}{\cos i}
 <section id="data-enhancement-vocabulary" class="level4" data-number="3.1.3.2">
 <h4 data-number="3.1.3.2" class="anchored" data-anchor-id="data-enhancement-vocabulary"><span class="header-section-number">3.1.3.2</span> Data Enhancement Vocabulary</h4>
 <ul>
-<li><strong>Texture</strong>:</li>
-<li><strong>PCA</strong>:</li>
+<li><strong>Image Stretch</strong>: expanding the range of bands so that it utilises the whole range of values allowed</li>
+<li><strong>Texture</strong>: calculating the value across a certain window and comparing with adjacent values, allowing to identify edges of features</li>
+<li><strong>PCA</strong>: a method of dimension reduction</li>
 </ul>
 </section>
 </section>
 </section>
 <section id="applications" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">3.2</span> Applications</h2>
-<p>Research papers addressing the</p>
+<p>I will look at 2 papers that measure the accuracy of image segmentation using different color bands and methodologies.</p>
+<p><span class="citation" data-cites="trias-sanz2008">Trias-Sanz, Stamon, and Louchet (<a href="99_references.html#ref-trias-sanz2008" role="doc-biblioref">2008</a>)</span> explores the usage of colour bands and textures to identify objects within an image. Using multiple bands, the paper attempts to optimise the best parameter that successfully identifies different objects in an imagery of a rural area. The paper addresses the varying scale of focus in the project, whether to focus on individual trees within a field or the field as a total. It also discusses the multiple ways of data enhancement, and tries to optimise which parameters and transformed channels should be used to achieve the best results for object segmentation.</p>
+<p><span class="citation" data-cites="kupidura2019">Kupidura (<a href="99_references.html#ref-kupidura2019" role="doc-biblioref">2019</a>)</span> analysed multiple methods of texture analysis to compare the accuracy of identifying different land cover types. 3 types of texture extraction was considered, the GLCM (Gray Level Co-occurance Matrix), Laplace Filters and Granulometric Analysis. The first two methods seem to be more popular among remote sensing analysis, and a third method which is less known. The results indicate the granulometric analysis is the best methodology in terms of identifying different usages from satellite imagery, although I get the feeling that the authors are trying to promote this methodology that they have been using for previous research, since the merit of the granulometric analysis derives from mitigation of the edge effect, a problem which the two other methods have in common. Maybe comparing different methodologies to overcome the edge effect would have been more persuasive (or, maybe this in itself is quite an achievement. I might need more knowledge in this field to answer that question.)</p>
+<p>Both of the papers address the accuracy of image segmentation using many possible index channels, where we try to identify the objects that appear in the satellite imagery. The first paper has a focus on tweaking parameters within a single methodology, while the second paper focuses on choosing the correct method given a remote sensing dataset. The 10-year difference between these papers might have seen a dramatic advance in technology, but I have the impression that trying to make image segmentation as accurate as possible is an essential part of EO data analysis.</p>
 </section>
 <section id="reflection" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
-<p>After a few weeks, I am starting to understand what you can actually do with remote sensing data.</p>
+<p>Data correction is the first thing we have covered this week, and I cannot believe analysis ready data is provided after all this manipulation. Although I might not do the data correction myself, I should be prepared to understand the differences between the multiple products of satellite imagery, and be able to choose which one I should be using for analysis.</p>
+<p>I feel very thankful for the people trying to improve the algorithm behind analyses; which I could not get my head around. The idea of taking multiple bands and adjacent pixels are interesting enough already, and trying to make out different features are wonderful!</p>
+<p>After a few weeks, I am starting to understand the variety of things you can do using satellite imagery. I did not have the idea of taking adjacent values and calculate indeces that act as indicators of change among the different datasets, which helps differentiate between objects within the imagery. I am feeling I should deep-dive into the different indeces developed by other researchers, to see what can be highlighted using simple combinations of different bands!</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-earthlab2018" class="csl-entry" role="listitem">
+EarthLab. 2018. <span>“Learn to <span>Use NAIP Multiband Remote Sensing Images</span> in <span>Python</span>.”</span> <em>Earth Data Science - Earth Lab</em>. https://www.earthdatascience.org/courses/use-data-open-source-python/multispectral-remote-sensing/intro-naip/.
+</div>
 <div id="ref-jensen2016" class="csl-entry" role="listitem">
 Jensen, John R. 2016. <em>Introductory Digital Image Processing: A Remote Sensing Perspective / <span>John R</span>. <span>Jensen</span> (<span>University</span> of <span>South Carolina</span>).</em> 4th edition. Pearson Series in Geographic Information Science. <span>Glenview, IL</span>: <span>Pearson Education, Inc.</span>
+</div>
+<div id="ref-kupidura2019" class="csl-entry" role="listitem">
+Kupidura, Przemysław. 2019. <span>“The <span>Comparison</span> of <span>Different Methods</span> of <span>Texture Analysis</span> for <span>Their Efficacy</span> for <span>Land Use Classification</span> in <span>Satellite Imagery</span>.”</span> <em>Remote Sensing</em> 11 (10): 1233. <a href="https://doi.org/10.3390/rs11101233">https://doi.org/10.3390/rs11101233</a>.
 </div>
 <div id="ref-liang2020" class="csl-entry" role="listitem">
 Liang, Shunlin, and Jindi Wang, eds. 2020. <span>“Chapter 4 - <span>Atmospheric</span> Correction of Optical Imagery.”</span> In <em>Advanced <span>Remote Sensing</span> (<span>Second Edition</span>)</em>, 131–56. <span>Academic Press</span>. <a href="https://doi.org/10.1016/B978-0-12-815826-5.00004-0">https://doi.org/10.1016/B978-0-12-815826-5.00004-0</a>.
 </div>
 <div id="ref-skopyk2021" class="csl-entry" role="listitem">
 Skopyk, Brad. 2021. <span>“Georeferencing <span>Historical Maps</span>.”</span> <em>ArcGIS StoryMaps</em>. https://storymaps.arcgis.com/stories/dd75d0398f7d4ded924d303161895b8b.
+</div>
+<div id="ref-trias-sanz2008" class="csl-entry" role="listitem">
+Trias-Sanz, Roger, Georges Stamon, and Jean Louchet. 2008. <span>“Using Colour, Texture, and Hierarchial Segmentation for High-Resolution Remote Sensing.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 63 (2): 156–68. <a href="https://doi.org/10.1016/j.isprsjprs.2007.08.005">https://doi.org/10.1016/j.isprsjprs.2007.08.005</a>.
 </div>
 </div>
 </section>
