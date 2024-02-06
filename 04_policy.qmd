@@ -98,7 +98,6 @@ The current situation of urban sprawl and loss of urban green and blue spaces ma
 
 The digitalisation part has a lot of interesting statements regarding open data, but not much was mentioned regarding EO data.
 
-
 ## Applications
 
 I have identified a few topics that remote sensing may play a role.
@@ -112,27 +111,37 @@ The following are potential methodology that may be suitable for the analysis of
 
 ### Resilience against natural hazards
 
-@ghaffarian2018 has provided a review on proxy parameters for disaster risk that can be extracted from satellite imagery. These include building height and material for vulnerablity against earthquakes, road network analysis for assessment of transport networks, and flood water levels and debris detection for flood risk assessment. @rong2020 has used DSM data for hydrodyanamic simulation of flood risks. 
+@ghaffarian2018 has provided a review on proxy parameters for disaster risk that can be extracted from satellite imagery. These include building height and material for vulnerability against earthquakes, road network analysis for assessment of transport networks, and flood water levels and debris detection for flood risk assessment. @rong2020 has used DSM (Digital Surface Model) data for hydrodynamic simulation of flood risks, a method where @gillespie2007 has indicated but faced limitations of spatial resolution at that age. 
 
 Data on the spatial characteristics of cities can be a useful way to assess flood and other disaster risk.
 
-### Urban morphology
+### Built-up areas and green and blue spaces
 
+Land cover mapping is one of the major applications of earth observation data [@ming2016], and a lot of work has been done to achieve this. 
 
+@ming2016 has used random forest methods to classify natural land cover using satellite data, where they have classified usages with high averages, but limitations lie in its accuracy to identify urban areas compared to natural land cover. 
+
+@gupta2012 has proposed the *Urban Neighborhood Green Index* - an index of quality of green space within built-up areas using NDVI (vegetation detection), building height estimation (shadow length) and classification of vegetation (using image classification techniques). 
+
+These methodologies can be used for approximating the available green space within the urban landscape, and an index will allow for comparisons between cities.s
+
+### Land use and infrastructure
+
+This is a minor revision of the above: comparing the built-up area with the infrastructure is a potential way to identify the disadvantages of urban sprawl. An interesting approach by @shao2021 combined the identification of built-up areas using remote sensing and social media activity location data, and suggested the relative inactivity in sprawl areas is related to the lack of telecommunication infrastructure. By comparing the usages of infrastructure (such as transport OD data) and urban built up areas, we may be able to draw some interesting characteristics of urban areas.
 
 ### Socio-economic factors
 
+Evaluation of socio-economic factors are a difficult topic just by using earth observation data.
 
+Few suggestions include:
 
-Network analysis data
-Night-time lights data for economic analysis
-Building footprints
+- Network analysis of transport infrastructure
+- Night-time lights data for economic analysis
+- Building footprints
+- Reflection levels (high-level of reflection indicate industrial land use)
+- Building shadows? Shaded by infrastructure?
 
-Vegetation
-Elevation models
-Informal settlements are the hardest to do
-
-
+I might need some extra reading on this, but I feel it will be an interesting topic to explore. Urban morphology and the architecture is heavily dependent on the local environment and culture, so unsure if one way of data observation can contribute to the whole picture.
 
 ## Reflections
 
