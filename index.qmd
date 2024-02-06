@@ -1,14 +1,28 @@
-# About the Website {.unnumbered}
+# Welcome {.unnumbered}
+
+Welcome to the Remote Sensing Learning Diary! This is where I will update my progress in learning how to analyse and make use of remote sensing data!
 
 ## About me
 
-I am Soki Kimura, a master's student at the Bartlett Centre for Advanced Spatial Analysis.
+![Soki Kimura - at Karatsu, Saga, Japan during a first real trip on a motorcycle after I got my license. This place has the best squids in the world.](images/soki_kimura.jpg)
+
+I am Soki Kimura, a master's student at the Bartlett Centre for Advanced Spatial Analysis at University College London.
+
+I am interested in the designing and analysing of cities, with some experience as a planner in the public sector. 
+
+My interest toward cities probably started building up playing [SimCity 4](https://www.ea.com/en-gb/games/simcity) - maybe when I was 7 years old. Building cities and looking at how well it was performing, zoning areas and trying to make private development happen, all of that topped up with pleasing music was my first interaction with spatial data.
+
+Never had I imagined I will still be [playing around with spatial data](https://sokimura39.github.io/30DayMapChallenge/) 20 years later!
 
 ## About this website
 
 This is the learning diary for the [CASA0023 Remote Sensing Cities and Environment](https://andrewmaclachlan.github.io/CASA0023/) module led by Dr. Andy Maclachlan.
 
-More information coming up in the future weeks!
+I will summarise the content of each week throughout the module, followed by few papers that apply the methodology. I will make personal reflections for each week's content, trying as much as I can to relate to my personal experience or knowledge.
 
+## How this website is made
+
+This website was rendered using [Quarto](https://quarto.org/) enabling us to create websites from RStudio environments! 
+I have used this for creating assignment reports, and I am amazed how you can easily create websites from a markdown document.
 
 

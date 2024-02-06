@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CASA0023 - Remote Sensing Learning Diary",
     "section": "",
-    "text": "About the Website"
+    "text": "Welcome\nWelcome to the Remote Sensing Learning Diary! This is where I will update my progress in learning how to analyse and make use of remote sensing data!"
   },
   {
     "objectID": "intro.html",
@@ -60,14 +60,14 @@
     "href": "index.html#about-me",
     "title": "CASA0023 - Remote Sensing Learning Diary",
     "section": "About me",
-    "text": "About me\nI am Soki Kimura, a master’s student at the Bartlett Centre for Advanced Spatial Analysis."
+    "text": "About me\n\n\n\nSoki Kimura - at Karatsu, Saga, Japan during a first real trip on a motorcycle after I got my license. This place has the best squids in the world.\n\n\nI am Soki Kimura, a master’s student at the Bartlett Centre for Advanced Spatial Analysis at University College London.\nI am interested in the designing and analysing of cities, with some experience as a planner in the public sector.\nMy interest toward cities probably started building up playing SimCity 4 - maybe when I was 7 years old. Building cities and looking at how well it was performing, zoning areas and trying to make private development happen, all of that topped up with pleasing music was my first interaction with spatial data.\nNever had I imagined I will still be playing around with spatial data 20 years later!"
   },
   {
     "objectID": "index.html#about-this-website",
     "href": "index.html#about-this-website",
     "title": "CASA0023 - Remote Sensing Learning Diary",
     "section": "About this website",
-    "text": "About this website\nThis is the learning diary for the CASA0023 Remote Sensing Cities and Environment module led by Dr. Andy Maclachlan.\nMore information coming up in the future weeks!"
+    "text": "About this website\nThis is the learning diary for the CASA0023 Remote Sensing Cities and Environment module led by Dr. Andy Maclachlan.\nI will summarise the content of each week throughout the module, followed by few papers that apply the methodology. I will make personal reflections for each week’s content, trying as much as I can to relate to my personal experience or knowledge."
   },
   {
     "objectID": "01_intro.html#summary",
@@ -152,5 +152,12 @@
     "title": "4  Policy Implications",
     "section": "4.2 Application",
     "text": "4.2 Application"
+  },
+  {
+    "objectID": "index.html#how-this-website-is-made",
+    "href": "index.html#how-this-website-is-made",
+    "title": "CASA0023 - Remote Sensing Learning Diary",
+    "section": "How this website is made",
+    "text": "How this website is made\nThis website was rendered using Quarto enabling us to create websites from RStudio environments! I have used this for creating assignment reports, and I am amazed how you can easily create websites from a markdown document."
   }
 ]
