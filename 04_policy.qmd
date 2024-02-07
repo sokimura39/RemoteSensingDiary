@@ -8,8 +8,8 @@ I will explore 2 different policy documents; one at the municipal level and one 
 
 The 2 documents I chose for this week's practical are:
 
-- (OneNYC 2050)[https://climate.cityofnewyork.us/reports/onenyc-2050/]
-- (G7 Sustainable Urban Development Ministers' Meeting Communiqué)[(https://www.mlit.go.jp/report/press/content/Communique_EN.pdf)]
+-   [OneNYC 2050](https://climate.cityofnewyork.us/reports/onenyc-2050)
+-   [G7 Sustainable Urban Development Ministers' Meeting Communiqué](https://www.mlit.go.jp/report/press/content/Communique_EN.pdf)
 
 ### OneNYC 2050
 
@@ -17,29 +17,27 @@ OneNYC 2050 addresses the challenges that come along for a sustainable, resilien
 
 The visions proposed in this document are as follows (excerpt from pp.46-47):
 
-1. A vibrant democracy
-2. An inclusive economy
-3. Thriving neighbourhoods
-4. Healthy lives
-5. Equity and excellence in education
-6. A livable climate
-7. Efficient mobility
-8. Modern infrastructure
-
+1.  A vibrant democracy
+2.  An inclusive economy
+3.  Thriving neighbourhoods
+4.  Healthy lives
+5.  Equity and excellence in education
+6.  A livable climate
+7.  Efficient mobility
+8.  Modern infrastructure
 
 The challenges addressed in this policy document is (p24):
 
-1. Rising Unaffordability
-2. Economic Insecurity
-3. Wealth and Health Disparities
-4. A Climate Emergency
-5. Failing Infrastructure and Shifting Needs
-6. Threats to Democracy
+1.  Rising Unaffordability
+2.  Economic Insecurity
+3.  Wealth and Health Disparities
+4.  A Climate Emergency
+5.  Failing Infrastructure and Shifting Needs
+6.  Threats to Democracy
 
 We can immediately see that most of the factors addressed are related to socio-economic factors, which seem to be difficult to observe from above the atmosphere.
 
 Impacts of climate change and infrastructure is one topic that seems to be more manageable by observing the morphology of the urban landscape.
-
 
 Application could be in the following areas:
 
@@ -102,26 +100,26 @@ The digitalisation part has a lot of interesting statements regarding open data,
 
 I have identified a few topics that remote sensing may play a role.
 
-- Resilience against natural hazards
-- Growth of urban built-up areas and impact on green and blue spaces
-- Land use and match with transportation
-- Socio-economic factors and urban landscape
+-   Resilience against natural hazards
+-   Growth of urban built-up areas and impact on green and blue spaces
+-   Land use and match with transportation
+-   Socio-economic factors and urban landscape
 
 The following are potential methodology that may be suitable for the analysis of areas.
 
 ### Resilience against natural hazards
 
-@ghaffarian2018 has provided a review on proxy parameters for disaster risk that can be extracted from satellite imagery. These include building height and material for vulnerability against earthquakes, road network analysis for assessment of transport networks, and flood water levels and debris detection for flood risk assessment. @rong2020 has used DSM (Digital Surface Model) data for hydrodynamic simulation of flood risks, a method where @gillespie2007 has indicated but faced limitations of spatial resolution at that age. 
+@ghaffarian2018 has provided a review on proxy parameters for disaster risk that can be extracted from satellite imagery. These include building height and material for vulnerability against earthquakes, road network analysis for assessment of transport networks, and flood water levels and debris detection for flood risk assessment. @rong2020 has used DSM (Digital Surface Model) data for hydrodynamic simulation of flood risks, a method where @gillespie2007 has indicated but faced limitations of spatial resolution at that age.
 
 Data on the spatial characteristics of cities can be a useful way to assess flood and other disaster risk.
 
 ### Built-up areas and green and blue spaces
 
-Land cover mapping is one of the major applications of earth observation data [@ming2016], and a lot of work has been done to achieve this. 
+Land cover mapping is one of the major applications of earth observation data [@ming2016], and a lot of work has been done to achieve this.
 
-@ming2016 has used random forest methods to classify natural land cover using satellite data, where they have classified usages with high averages, but limitations lie in its accuracy to identify urban areas compared to natural land cover. 
+@ming2016 has used random forest methods to classify natural land cover using satellite data, where they have classified usages with high averages, but limitations lie in its accuracy to identify urban areas compared to natural land cover.
 
-@gupta2012 has proposed the *Urban Neighborhood Green Index* - an index of quality of green space within built-up areas using NDVI (vegetation detection), building height estimation (shadow length) and classification of vegetation (using image classification techniques). 
+@gupta2012 has proposed the *Urban Neighborhood Green Index* - an index of quality of green space within built-up areas using NDVI (vegetation detection), building height estimation (shadow length) and classification of vegetation (using image classification techniques).
 
 These methodologies can be used for approximating the available green space within the urban landscape, and an index will allow for comparisons between cities.s
 
@@ -135,11 +133,11 @@ Evaluation of socio-economic factors are a difficult topic just by using earth o
 
 Few suggestions include:
 
-- Network analysis of transport infrastructure
-- Night-time lights data for economic analysis
-- Building footprints
-- Reflection levels (high-level of reflection indicate industrial land use)
-- Building shadows? Shaded by infrastructure?
+-   Network analysis of transport infrastructure
+-   Night-time lights data for economic analysis
+-   Building footprints
+-   Reflection levels (high-level of reflection indicate industrial land use)
+-   Building shadows? Shaded by infrastructure?
 
 I might need some extra reading on this, but I feel it will be an interesting topic to explore. Urban morphology and the architecture is heavily dependent on the local environment and culture, so unsure if one way of data observation can contribute to the whole picture.
 
@@ -152,3 +150,27 @@ Nonetheless it is undeniably an important topic, so I believe this is where expe
 I feel that remote sensing data has the potential to overcome some of the problems; one major cause of dispute among different stakeholders is the varying definitions and interpretations of topics on the international agenda. The nature of satellite imagery where all parts of the globe are sensed equally may contribute to solving common causes of disagreement such as lack of data, different people having different criteria and explanations, the problem of cost, and more.
 
 This was a very good exercise for me!
+
+### Additional notes
+
+My other interest lies in the field of disaster risk reduction, but couldn't dig in deep enough to make it a full entry on the learning diary.
+
+The overarching document recently is the [Sendai Framework for Disaster Risk Reduction](https://www.undrr.org/implementing-sendai-framework), which aims to substantially reduce the risk and losses from disasters.
+
+7 targets are defined:
+
+> 1. substantially reduce global disaster mortality by 2030
+> 2. substantially reduce number of affected people globally
+> 3. reduce direct disaster economic loss
+> 4. substantially reduce disaster damage to critical infrastructure and disruption of basic services (health, education)
+> 5. substantially increase the number of countries with DRR strategy
+> 6. substantially enhance int'l cooperation to developing countries through adequate and sustainable support
+> 7. substantially increase availability of and access to multi-hazard early warning
+
+Remote sensing may come into play for assessment of affected people, potential risk. Possible datasets are:
+
+- DSM models
+- population density data
+
+The risk assessment will be the hard part. Some papers [@geiss2013; @tralli2005] do suggest earthquakes and volcano risks can also be assessed using satellite imagery, but need to look in deeper.
+

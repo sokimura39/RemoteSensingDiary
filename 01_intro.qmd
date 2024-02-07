@@ -36,13 +36,18 @@ These often come with trade-offs (detailed data comes at the cost of lower frequ
 
 ## Applications
 
-The applications of satellite imagery is huge! Advanced use-cases include:
+### Research
 
--   detect illegal logging in the Amazon [@teixeira2022]
--   predict and assess natural hazards [@gillespie2007]
--   assess the damage of conflicts [@yerushalmy2023]
+The applications of satellite imagery is huge! Here are a few that caught my eye.
 
-### Analysis on New York City
+One example is that of MapBiomas Alerta [@mapbiomasa] tracking deforestation and alerting stakeholders upon detection. According to @texeira2022 where the project is reviewed, the main goal of this project is to add to the transparency of the status of deforestation. The change in the political situation in Brazil has also contributed to the increase in deforestation, and the team supports local authorities to prosecute illegal deforestation.
+
+Remote sensing can also be used to predict and assess natural hazards. @gillespie2007 has summarised the ways damage from disasters including earthquakes, floods, and fires, can be observed from satellite imagery. They have also proposed ways to identify potential threats happening in the future. They have successfully observed the aftermath of disasters by capturing collapsed buildings or flooded areas, but their methodology on prediction of disasters may need further refinement. Limitations include the spatial and temporal resolution of available data, and atmospheric interference affecting the quality of data. Assessment of damage can also be applied to conflicts, one of the examples being @yerushalmy2023 investigating the Gaza Strip.
+
+These research show the potential of satellite imagery, making available data for all areas of the globe, regardless of the inaccessibility the area has. Conflict areas are a great example of this, where actual exploration is basically impossible. The limitation lies in the spatial resolution, where the granularity of the data directly affects the resolution of analysis. Temporal resolution makes near-real-time interaction impossible. A detailed analysis always need on-site observations, but making use of universally available data may be useful for early reactions.
+
+
+### Personal Analysis on New York City
 
 For my first satellite imagery analysis, I chose New York City, USA.I have sampled areas with different land cover and checked the difference in reflectance, and compared observations from Landsat-8 and Sentinel-2. The following places were sampled, representing each of the land coverages.
 
