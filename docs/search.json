@@ -159,5 +159,26 @@
     "title": "CASA0023 - Remote Sensing Learning Diary",
     "section": "How this website is made",
     "text": "How this website is made\nThis website was rendered using Quarto enabling us to create websites from RStudio environments! I have used this for creating assignment reports, and I am amazed how you can easily create websites from a markdown document."
+  },
+  {
+    "objectID": "05_gge.html#summary",
+    "href": "05_gge.html#summary",
+    "title": "5  Google Earth Engine",
+    "section": "5.1 Summary",
+    "text": "5.1 Summary\nGoogle Earth Engine is a cloud-based online platform prividing access to huge amounts of analysis-ready data and high-performing computing resources (Gorelick et al. 2017)."
+  },
+  {
+    "objectID": "05_gge.html#applications",
+    "href": "05_gge.html#applications",
+    "title": "5  Google Earth Engine",
+    "section": "5.2 Applications",
+    "text": "5.2 Applications"
+  },
+  {
+    "objectID": "05_gge.html#reflections",
+    "href": "05_gge.html#reflections",
+    "title": "5  Google Earth Engine",
+    "section": "5.3 Reflections",
+    "text": "5.3 Reflections\n\n\n\n\nGorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. “Google Earth Engine: Planetary-scale Geospatial Analysis for Everyone.” Remote Sensing of Environment, Big Remotely Sensed Data: Tools, applications and experiences, 202 (December): 18–27. https://doi.org/10.1016/j.rse.2017.06.031."
   }
 ]

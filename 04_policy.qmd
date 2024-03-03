@@ -159,18 +159,17 @@ The overarching document recently is the [Sendai Framework for Disaster Risk Red
 
 7 targets are defined:
 
-> 1. substantially reduce global disaster mortality by 2030
-> 2. substantially reduce number of affected people globally
-> 3. reduce direct disaster economic loss
-> 4. substantially reduce disaster damage to critical infrastructure and disruption of basic services (health, education)
-> 5. substantially increase the number of countries with DRR strategy
-> 6. substantially enhance int'l cooperation to developing countries through adequate and sustainable support
-> 7. substantially increase availability of and access to multi-hazard early warning
+> 1.  substantially reduce global disaster mortality by 2030
+> 2.  substantially reduce number of affected people globally
+> 3.  reduce direct disaster economic loss
+> 4.  substantially reduce disaster damage to critical infrastructure and disruption of basic services (health, education)
+> 5.  substantially increase the number of countries with DRR strategy
+> 6.  substantially enhance int'l cooperation to developing countries through adequate and sustainable support
+> 7.  substantially increase availability of and access to multi-hazard early warning
 
 Remote sensing may come into play for assessment of affected people, potential risk. Possible datasets are:
 
-- DSM models
-- population density data
+-   DSM models
+-   population density data
 
 The risk assessment will be the hard part. Some papers [@geiss2013; @tralli2005] do suggest earthquakes and volcano risks can also be assessed using satellite imagery, but need to look in deeper.
-

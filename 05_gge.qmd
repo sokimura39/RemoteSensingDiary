@@ -1,0 +1,14 @@
+# Google Earth Engine
+
+## Summary
+
+[Google Earth Engine](https://earthengine.google.com/) is a cloud-based online platform providing access to huge amounts of analysis-ready data and high-performing computing resources [@gorelick2017a].
+The ability to access to both large data and the computational power capable of handling it this enables large-scale analysis that is otherwise impossible using individual computers.
+
+
+## Applications
+
+
+
+## Reflections
+

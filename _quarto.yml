@@ -12,6 +12,9 @@ book:
     - 02_portfolio.qmd
     - 03_rs_data.qmd
     - 04_policy.qmd
+    - 05_gge.qmd
+    - 06_classification.qmd
+    - 07_accuracy.qmd
     - 99_references.qmd
 
 bibliography: learning_diary.bib
