@@ -81,6 +81,8 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -182,7 +184,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">5.1</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">5.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#an-example-using-delhi-india" id="toc-an-example-using-delhi-india" class="nav-link" data-scroll-target="#an-example-using-delhi-india"><span class="header-section-number">5.1.1</span> An example using Delhi, India</a></li>
+  </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">5.2</span> Applications</a></li>
   <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">5.3</span> Reflections</a></li>
   </ul>
@@ -210,18 +215,63 @@ div.csl-indent {
 
 <section id="summary" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
-<p><a href="https://earthengine.google.com/">Google Earth Engine</a> is a cloud-based online platform providing access to huge amounts of analysis-ready data and high-performing computing resources <span class="citation" data-cites="gorelick2017a">(<a href="99_references.html#ref-gorelick2017a" role="doc-biblioref">Gorelick et al. 2017</a>)</span>. The ability to access to both large data and the computational power capable of handling it this enables large-scale analysis that is otherwise impossible using individual computers.</p>
+<p><a href="https://earthengine.google.com/">Google Earth Engine</a> is a cloud-based online platform providing access to huge amounts of analysis-ready data and high-performing computing resources <span class="citation" data-cites="gorelick2017a">(<a href="99_references.html#ref-gorelick2017a" role="doc-biblioref">Gorelick et al. 2017</a>)</span>. The ability to access to both large data and the computational power capable of handling it this enables large-scale analysis that is otherwise impossible using individual computers. It also allows to publish applications that end-users can directly interact with. This vastly increases the potential audience and the data available to them, having the potential to change decisions in many levels.</p>
+<p>In terms of analysis, one important factor of Google Earth Engine is that we no longer have to worry too much about spatial resolutions and merging data. The spatial resolution is defined by the output resolution, and it automatically aggregates the data to match the desired output. The datasets organised into image collections enable simple filtering, merging and aggregating of multiple imageries.</p>
+<section id="an-example-using-delhi-india" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="an-example-using-delhi-india"><span class="header-section-number">5.1.1</span> An example using Delhi, India</h3>
+<p>My first data manipulation using Google Earth Engine was for Delhi, India - following the instructions on the module notebook.</p>
+<p>The workflow was a very straightforward process - even if it did involve a bit of JavaScript - and I did not need to wait forever for my computer to process the huge raster files!</p>
+<p>Extracting the datasets that cover the whole of the study area, while considering the cloud cover and period of observation, can be done by selecting data using code, easily achieving the following results.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week6/mosaic_delhi.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Landsat 8 imagery for tiles that overlap with the New Delhi area. The black area indicates the study area.</figcaption>
+</figure>
+</div>
+<p>Merging and clipping data did not take very long (much shorter compared to the local environment!), and we could calculate the texture component of the whole Delhi area.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week6/texture.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Texture of the Delhi area. Pink areas indicate areas with high difference compared to others - indicating the existence of buildings.</figcaption>
+</figure>
+</div>
+<p>This accessibility to the dataset is a massive improvement compared to manually locating and downloading files, using software to analyse, and producing outputs, all requiring some amount of effort.</p>
+</section>
 </section>
 <section id="applications" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">5.2</span> Applications</h2>
+<p>Applications of Google Earth Engine spreads across various fields and areas, with high volumes of research published in the fields of agriculture, hydrology, and land use analysis; the majority using optical imagery data <span class="citation" data-cites="tamiminia2020 amani2020">(<a href="99_references.html#ref-tamiminia2020" role="doc-biblioref">Tamiminia et al. 2020</a>; <a href="99_references.html#ref-amani2020" role="doc-biblioref">Amani et al. 2020</a>)</span>.</p>
+<p>One of these research application is done by <span class="citation" data-cites="sidhu2018">Sidhu, Pebesma, and Câmara (<a href="99_references.html#ref-sidhu2018" role="doc-biblioref">2018</a>)</span>, where they have explored the land use change in the island nation of Singapore. This research observes two phenomena: the dredging (expansion of land into the ocean by placing sand on the ocean floor) seen in the coastal industrial area, and the preservation of the natural environment in the Central Catchment Reserve (CCR). This was observed using the Enhanced Vegetation Index (EVI), calculated as follows:</p>
+<p><span class="math display">\[
+\text{EVI} =  \frac{2.5\left(\rho_{\text{nir}}-\rho_{\text{red}}\right)}{\rho_{\text{nir}}+6\rho_{\text{red}}-7.5\rho_{\text{blue}}+1}
+\]</span></p>
+<p>where <span class="math inline">\(\rho\)</span> is the surface reflectance for each band.</p>
+<p>This index was used due to its higher resistance to atmospheric noise, and is an index used to measure the vegetation level from satellite imagery. The strength of the Google Earth Engine was used in order to calculate the time series for the EVI in the study areas for a period of 5 years, and comparing 2 data sources (Landsat and MODIS). The observations at the CCR has shown there is a seasonal difference in the EVI levels due to the change of vegetation conditions, highlighting the monsoon season observed in this part of the world. However, the observations for the dredging area saw no significant sign of dredging captured from this EVI index. The EVI focuses on detecting vegetation, and it was difficult to detect the change from water (ocean) to bare soil (dredging). Although this research aimed to explore the potential of GGE, it is highlighting the need to consider indeces carefully to meet the needs of each research. Even with the high computational power and petabytes of data, the researchers must be aware of the processing tool we are using.</p>
+<p>Google Earth Engine is capable of building spatial applications using <a href="https://www.earthengine.app/">Google Earth Engine Apps</a>, which is another field where Google Earth Engine is spreading its use-cases. One example is the [OFF!Cast Mosquito Forecast] created by a pesticide brand OFF! predicting mosquito outbreaks within the United States. The weather data accumulated by Google Earth Engine is combined with a model comparing weather conditions to mosquito activities <span class="citation" data-cites="buonfantino2022">(<a href="99_references.html#ref-buonfantino2022" role="doc-biblioref">Buonfantino 2022</a>)</span>. This allows end-users to get the mosquito forecast for their area of interest by querying using their ZIP code. Although this may be a simplified analysis aimed to enhance the consumption of their products, it shows the possibility of highly-processed spatial data being tailor-made to fit each individuals’ interests.</p>
+<p>These are 2 of the various applications made by Google Earth Engine. From within the academic realm to reaching out to individual end-users who are not expected to be familiar with wrangling spatial data, Google Earth Engine provides a platform to further expand the potential fields of application for spatial data analysis.</p>
 </section>
 <section id="reflections" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.3</span> Reflections</h2>
+<p>I feel this is a completely different take by Google toward geospatial data; Google Maps is obviously not the only contribution by this tech giant company in the field of GIScience. (I recall a speech from someone at the Google Maps team emphasising the idea of self-healing maps being supported by a huge number of end-users, but this is more developer-oriented.)</p>
+<p>After a few weeks of using massive earth observation data under the local environment, I have felt the limits of doing these analyses using limited computational power. Google Earth Engine lets us use tremendous amounts of data and cloud computers for analysis we could not have done before. The interesting addition to this is that you can publish apps that allow direct interaction with end-users!</p>
+<p>I hope to explore further the world of remote sensing data with this recently growing tool!</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-amani2020" class="csl-entry" role="listitem">
+Amani, Meisam, Arsalan Ghorbanian, Seyed Ali Ahmadi, Mohammad Kakooei, Armin Moghimi, S. Mohammad Mirmazloumi, Sayyed Hamed Alizadeh Moghaddam, et al. 2020. <span>“Google <span>Earth Engine Cloud Computing Platform</span> for <span>Remote Sensing Big Data Applications</span>: <span>A Comprehensive Review</span>.”</span> <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em> 13: 5326–50. <a href="https://doi.org/10.1109/JSTARS.2020.3021052">https://doi.org/10.1109/JSTARS.2020.3021052</a>.
+</div>
+<div id="ref-buonfantino2022" class="csl-entry" role="listitem">
+Buonfantino, Giusy. 2022. <span>“<span>SC Johnson</span> Forecasts Mosquitoes with <span>Google Earth Engine</span>.”</span> <em>Google Cloud Blog</em>. https://cloud.google.com/blog/products/data-analytics/sc-johnson-forecasts-mosquitoes-with-google-earth-engine.
+</div>
 <div id="ref-gorelick2017a" class="csl-entry" role="listitem">
 Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“Google <span>Earth Engine</span>: <span class="nocase">Planetary-scale</span> Geospatial Analysis for Everyone.”</span> <em>Remote Sensing of Environment</em>, Big <span>Remotely Sensed Data</span>: Tools, applications and experiences, 202 (December): 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
+</div>
+<div id="ref-sidhu2018" class="csl-entry" role="listitem">
+Sidhu, Nanki, Edzer Pebesma, and Gilberto Câmara. 2018. <span>“Using <span>Google Earth Engine</span> to Detect Land Cover Change: <span>Singapore</span> as a Use Case.”</span> <em>European Journal of Remote Sensing</em> 51 (1): 486–500. <a href="https://doi.org/10.1080/22797254.2018.1451782">https://doi.org/10.1080/22797254.2018.1451782</a>.
+</div>
+<div id="ref-tamiminia2020" class="csl-entry" role="listitem">
+Tamiminia, Haifa, Bahram Salehi, Masoud Mahdianpari, Lindi Quackenbush, Sarina Adeli, and Brian Brisco. 2020. <span>“Google <span>Earth Engine</span> for Geo-Big Data Applications: <span>A</span> Meta-Analysis and Systematic Review.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 164 (June): 152–70. <a href="https://doi.org/10.1016/j.isprsjprs.2020.04.001">https://doi.org/10.1016/j.isprsjprs.2020.04.001</a>.
 </div>
 </div>
 </section>
