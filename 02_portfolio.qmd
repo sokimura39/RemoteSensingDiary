@@ -2,7 +2,7 @@
 
 This week, instead of a learning diary article, I have made a portfolio on a sensor - the ALOS project launched by Japan.
 
-Using Quarto and Xaringan, we aim to create an online portfolio for my works!
+This was created using the Xaringan package. I was surprised how easy it is to create slides without overthinking about the layout like you do when using conventional software.
 
 ## The presentation
 
@@ -11,6 +11,3 @@ xaringanExtra::embed_xaringan(
   url = "https://sokimura39.github.io/RS_sensor_presentation/",
   ratio = "16:9")
 ```
-
-
-

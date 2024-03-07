@@ -2,7 +2,25 @@
 
 ## Summary
 
+### Overview
+
+**Classification** in the remote sensing context is to identify the different land uses based on the observations. This is often not the final output of research, but is incorporated as an important part of the data processing pipeline in many use cases. Identification of urban areas or vegetation are some common goals of classification. The main idea behind classification is to 
+
+### Methodology
+
+
+
+
 ## Applications
+
+Many projects integrate classification of land cover as part of their projects.
+
+
 
 
 ## Reflections
+
+Identifying different land use from 
+
+
+

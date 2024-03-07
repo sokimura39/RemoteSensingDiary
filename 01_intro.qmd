@@ -1,3 +1,7 @@
+---
+bibliography: learning_diary.bib
+---
+
 # Getting Started with Remote Sensing
 
 ## Summary
@@ -51,7 +55,7 @@ These research show the potential of satellite imagery, making available data fo
 For my first satellite imagery analysis, I chose New York City, USA.I have sampled areas with different land cover and checked the difference in reflectance, and compared observations from Landsat-8 and Sentinel-2. The following places were sampled, representing each of the land coverages.
 
 | Land Coverage         | Sampled Place                                                 |
-|---------------------|---------------------------------------------------|
+|----------------------|--------------------------------------------------|
 | Forest                | Northwest Forest, Van Cortlandt Park, Bronx                   |
 | Grass                 | Parade Ground, Van Cortlandt Park, Bronx                      |
 | High Reflection Urban | Industry City, Brooklyn                                       |
