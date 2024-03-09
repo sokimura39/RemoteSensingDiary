@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CASA0023 - Remote Sensing Learning Diary - 7&nbsp; Accuracy</title>
+<title>CASA0023 - Remote Sensing Learning Diary - 7&nbsp; Accuracy and Sub- / Super-pixel analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -62,6 +81,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -74,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_accuracy.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Accuracy</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_accuracy.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Accuracy and Sub- / Super-pixel analysis</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_accuracy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Accuracy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Accuracy and Sub- / Super-pixel analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -159,14 +180,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">7.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#accuracy" id="toc-accuracy" class="nav-link" data-scroll-target="#accuracy"><span class="header-section-number">7.1.1</span> Accuracy</a></li>
+  <li><a href="#object-based-analysis" id="toc-object-based-analysis" class="nav-link" data-scroll-target="#object-based-analysis"><span class="header-section-number">7.1.2</span> Object-based analysis</a></li>
+  <li><a href="#sub-pixel-analysis" id="toc-sub-pixel-analysis" class="nav-link" data-scroll-target="#sub-pixel-analysis"><span class="header-section-number">7.1.3</span> Sub-pixel analysis</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">7.2</span> Applications</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">7.3</span> Reflections</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Accuracy</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Accuracy and Sub- / Super-pixel analysis</span></h1>
 </div>
 
 
@@ -181,8 +215,265 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="summary" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
+<p>This week we focus on measuring the accuracy of the classification, and object-based and sub-pixel analysis.</p>
+<section id="accuracy" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="accuracy"><span class="header-section-number">7.1.1</span> Accuracy</h3>
+<section id="accuracy-measures" class="level4" data-number="7.1.1.1">
+<h4 data-number="7.1.1.1" class="anchored" data-anchor-id="accuracy-measures"><span class="header-section-number">7.1.1.1</span> Accuracy Measures</h4>
+<p>The accuracy measures for remote sensing (and machine learning in general) is based upon comparing the positive / negative classifications to what the values actually were. The four possibilities that are considered can be organised as the following table.</p>
+<table class="table">
+<caption>Classification accuracies and errors</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Actually Positive</th>
+<th>Actually Negative</th>
+<th>Accuracy Measure</th>
+<th>Error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Positively Classified</strong></td>
+<td>True Positive</td>
+<td>False Positive</td>
+<td>User’s Accuracy (Precision)</td>
+<td>Commission Error</td>
+</tr>
+<tr class="even">
+<td><strong>Negatively Classified</strong></td>
+<td>False Negative</td>
+<td>True Negative</td>
+<td>Negative Predictive Value</td>
+<td>False Ommision Rate</td>
+</tr>
+<tr class="odd">
+<td><strong>Accuracy Measure</strong></td>
+<td>Producer’s Accuracy (Recall)</td>
+<td>True Negative Rate</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Error</strong></td>
+<td>Omission Error</td>
+<td>False Positive Rate</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The producer’s accuracy is the rate of pixels correctly positively identified to the ground truth data. This shows the accuracy from the producer’s point of view, calculating the correctly classified data.</p>
+<p><span class="math display">\[
+\text{Producer's Accuracy} = \frac{\text{TP}}{\text{TP}+\text{FN}}
+\]</span></p>
+<p>On the other hand, the user’s accuracy defines the ratio of correctly identified pixels within the values that are classified as positive. This is the accuracy from the user’s perspective, as the classified data is taken as the dividend.</p>
+<p><span class="math display">\[
+\text{User's Accuracy} = \frac{\text{TP}}{\text{TP}+\text{FP}}
+\]</span></p>
+<p>The <strong>overall accuracy</strong> is the rate of correctly identified (positively or negatively) cells.</p>
+<p><span class="math display">\[
+\text{Overall Accuracy} = \frac{\text{TP}+\text{TN}}{\text{TP}+\text{FP}+\text{TN}+\text{FN}}
+\]</span></p>
+<p>From this overall accuracy measures, a widely used but inconsistent coefficient, the <strong>kappa coefficient</strong>, can be calculated. This values compares the accuracy to a randomly classified value. When <span class="math inline">\(p_o\)</span> is the overall accuracy and <span class="math inline">\(p_e\)</span> the expected accuracy when classified randomly, the kappa coefficient <span class="math inline">\(\kappa\)</span> can be calculated as:</p>
+<p><span class="math display">\[
+\kappa = \frac{p_o-p_e}{1-p_e}
+\]</span></p>
+<p>The inconsistency in this coefficient is argued by <span class="citation" data-cites="foody2020">Foody (<a href="99_references.html#ref-foody2020" role="doc-biblioref">2020</a>)</span>, because there is a range of values that can be taken by the kappa coefficient, and it is difficult to interpret these values.</p>
+</section>
+<section id="trade-offs" class="level4" data-number="7.1.1.2">
+<h4 data-number="7.1.1.2" class="anchored" data-anchor-id="trade-offs"><span class="header-section-number">7.1.1.2</span> Trade-offs</h4>
+<p>The producer’s accuracy (precision) and the user’s accuracy (recall) is a trade-off: if we wanted to improve the producer’s accuracy, we will lower the threshold to increase the number of positively identified pixels. This will lead to more false positive values as well, thus causing a decrease in the user’s accuracy. Therefore, there is a need to consider both of these values to determine a good balance between precision and recall. The <strong>F-1 score</strong> is one of these measures, combining these two factors <span class="citation" data-cites="wilber2022">(<a href="99_references.html#ref-wilber2022" role="doc-biblioref">Wilber 2022a</a>)</span>.</p>
+<p><span class="math display">\[
+F_1 = \frac{2 \cdot \text{PA} \cdot \text{UA}}{\text{PA} + \text{UA}}
+= \frac{{\text{TP}}}{\text{TP} + \frac{1}{2} \left( \text{FP} + \text{FN} \right)}
+\]</span></p>
+<p>Another measure is the area under the ROC (Receiver Operating Characteristics) curve. The ROC curve is an indicator of the classification characteristics with false positive rates on the x axis and true positive rates on the y axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://andrewmaclachlan.github.io/CASA0023-lecture-7/img/ROC.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">ROC curve, excerpt from lecture slide. Originally from <span class="citation" data-cites="wilber2022a">Wilber (<a href="99_references.html#ref-wilber2022a" role="doc-biblioref">2022b</a>)</span></figcaption>
+</figure>
+</div>
+<p>The area under this curve (AUC) can be a measurement of the classification method, where a larger area indicates a better classification technique. A random classification will have an AUC of 0.5, and a perfect classification will have a value of 1.</p>
+</section>
+<section id="testing-the-accuracy" class="level4" data-number="7.1.1.3">
+<h4 data-number="7.1.1.3" class="anchored" data-anchor-id="testing-the-accuracy"><span class="header-section-number">7.1.1.3</span> Testing the accuracy</h4>
+<p>As with other machine learning, the training data and testing data must be different datasets. The following is a list of common procedures to generate training and testing data.</p>
+<ul>
+<li>Train-test split: leaving a certain percentage of the dataset for testing, and not use for training</li>
+<li>Cross-validation: split the dataset into <span class="math inline">\(k\)</span> parts, leave one segment at a time to test with model trained with the remainder</li>
+<li>Leave one out cross-validation: an extreme example of the above, just leaving one observation at a time</li>
+</ul>
+<p>Spatial autocorrelation is an important factor that must be considered in this process, but the above mentioned techniques all do not consider this when applied naively. Having the testing data very close to the training data is an inappropriate setting, as it is very likely to have the similar characteristics as the training dataset. A <strong>spatial cross-validation</strong> considers the spatial distribution of the training and testing datasets, taking a spatial subset of the dataset to keep for testing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://r.geocompx.org/figures/12_partitioning.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Spatial cross-validation, taking one area to leave behind for testing. Excerpt from <span class="citation" data-cites="lovelace2019">Lovelace, Nowosad, and Muenchow (<a href="99_references.html#ref-lovelace2019" role="doc-biblioref">2019</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="object-based-analysis" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="object-based-analysis"><span class="header-section-number">7.1.2</span> Object-based analysis</h3>
+<p>Instead of considering a single pixel at a time, the idea of object-based analysis is to take a group of cells (superpixels) clustered by their similarity or difference. A common way to achieve this is the Simple Linear Iterative Clustering method, where each cell is classified to the <em>nearest</em> centroid, with the distance considering both spectral and spatial distance. One simple example of this is:</p>
+<p><span class="math display">\[
+d = \sqrt{\left( \frac{d_c}{m} \right)^2 + \left( \frac{d_s}{S} \right)^2}
+\]</span></p>
+<p>where - <span class="math inline">\(d_c\)</span> spectral distance - <span class="math inline">\(m\)</span> compactness parameter - <span class="math inline">\(d_s\)</span> spatial distance - <span class="math inline">\(S\)</span> interval between initial clusters</p>
+<p>Improved models for considering other distance measures (other than Euclidian) are created and implemented under the <code>Supercells</code> package.</p>
+<p>The centroid is recalculated after the reclassification, and the process is iterated over multiple times (usually 5 - 10) to achieve the final output of classifications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://jakubnowosad.com/giscience-2021/figs/ga.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Example of the SLIC method, excerpt from <span class="citation" data-cites="nowosad2021">Nowosad and Stepinski (<a href="99_references.html#ref-nowosad2021" role="doc-biblioref">2021</a>)</span></figcaption>
+</figure>
+</div>
+<p>Classification algorithms are overlaid for each of the clusters rather than focusing on individual clusters.</p>
+</section>
+<section id="sub-pixel-analysis" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.3</span> Sub-pixel analysis</h3>
+<p>In contrast, sub-pixel analysis tries to identify the mixture within an area represented by a single pixel.</p>
+<p>Sub-pixel analysis assumes the data a pixel obtains is a combination of multiple pure land covers - <em>endmembers</em> - mixed in a certain ratio, as illustrated below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/36/22434/1046852/1046852-fig-1-source-large.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of sub-pixel analysis, excerpt from <span class="citation" data-cites="plaza2002">Plaza et al. (<a href="99_references.html#ref-plaza2002" role="doc-biblioref">2002</a>)</span></figcaption>
+</figure>
+</div>
+<p>When the pixel values for each of the endmembers are observed as <span class="math inline">\(p_{i\lambda}\)</span>, the mixed spectrum <span class="math inline">\(p_{\lambda}\)</span>can be broken down as</p>
+<p><span class="math display">\[
+p_{\lambda} = \sum_i{\left( p_{i\lambda}\cdot f_i \right)}+e_\lambda
+\]</span> where <span class="math inline">\(f_i\)</span> is the fractional cover for each of the endmembers, and <span class="math inline">\(e_{\lambda}\)</span> being the model error.</p>
+<p>A common model used in the urban context is the VIS model, where the endmembers <strong>V</strong>egetation, <strong>I</strong>mpervious surface, and <strong>S</strong>oil are considered.</p>
+<p>Under this model, when the pixel values for each of the <span class="math inline">\(k\)</span> bands are expressed as</p>
+<p><span class="math display">\[
+p =
+\begin{bmatrix}
+p_1 \\
+p_2 \\
+\vdots \\
+p_k
+\end{bmatrix}
+\]</span></p>
+<p>the fractional cover for each endmember can be calculated as shown below.</p>
+<p><span class="math display">\[
+\begin{gather}
+\begin{cases}
+p_{\lambda} =
+\begin{bmatrix}
+p_V &amp; p_I &amp; p_S
+\end{bmatrix}
+\begin{bmatrix}
+f_V \\
+f_I \\
+f_S
+\end{bmatrix}
+\\
+f_V + f_I + f_S = 1
+\end{cases}
+\\ \\
+\therefore
+\begin{bmatrix}
+p_{\lambda 1} \\
+p_{\lambda 2} \\
+\vdots \\
+p_{\lambda k} \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+p_{V1} &amp; p_{I1} &amp; p_{S1} \\
+p_{V2} &amp; p_{I2} &amp; p_{S2} \\
+\vdots &amp; \vdots &amp; \vdots \\
+p_{Vk} &amp; p_{Ik} &amp; p_{Sk} \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+f_V \\
+f_I \\
+f_S
+\end{bmatrix}
+\\
+\Leftrightarrow
+\begin{bmatrix}
+f_V \\
+f_I \\
+f_S
+\end{bmatrix}
+=
+\begin{bmatrix}
+p_{V1} &amp; p_{I1} &amp; p_{S1} \\
+p_{V2} &amp; p_{I2} &amp; p_{S2} \\
+\vdots &amp; \vdots &amp; \vdots \\
+p_{Vk} &amp; p_{Ik} &amp; p_{Sk} \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+p_{\lambda 1} \\
+p_{\lambda 2} \\
+\vdots \\
+p_{\lambda k} \\
+1
+\end{bmatrix}
+\end{gather}
+\]</span></p>
+<p>A limitation of this method can lie in identifying the endmembers, where it requires the existence of a pixel wit a ‘pure’ land cover - which may not be obvious.</p>
+</section>
+</section>
+<section id="applications" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">7.2</span> Applications</h2>
+<p>Applications of accuracy measures are often used for comparisons between models. <span class="citation" data-cites="rozenstein2011">Rozenstein and Karnieli (<a href="99_references.html#ref-rozenstein2011" role="doc-biblioref">2011</a>)</span> explores the use of multiple classification models to identify the land cover to create a database of land cover for Israel. They have also conducted a post-classification accuracy improvement procedure to enhance their results of classification. The confusion matrix, producer’s and user’s accuracies, and the kappa coefficient was used to anlayse the accuracy of each method, concluding the hybrid approach of unsupervised and supervised learning methods have achieved the highest accuracy. One interesting point made is that the <em>desired</em> accuracy measure of 85% introduced in past research is not always achieved when informing planning decisions, including the outcomes of this research.</p>
+<p><span class="citation" data-cites="roberts2017">Roberts et al. (<a href="99_references.html#ref-roberts2017" role="doc-biblioref">2017</a>)</span> explores the need for cross-validation techniques that take into consideration not only spatial autocorrelation but also having other underlying structures within the dataset. Creating blocks in the spatial context, temporal blocking, and leaving out individual observations are considered as potential methodologies to prevent overfitting and underestimating the errors of the machine learning model. This study does point out, however, that extrapolation errors emerge as new problems and this requires consideration as well - in the spatial context, the shape of each ‘block’ is suggested to impact this error.</p>
+<p>These research papers show the two aspects of accuracy in literature - the first paper is an example of accuracy used as part of the data pipeline that is helping the assessment of multiple models to serve a purpose, and the second model is the exploration of methodology that addresses and assesses accuracy. The first model uses the kappa coefficient - which is accused of being inconsistent but still being widely used - is an example of how this area is still under development and improvements must be made. The second paper shows that spatial autocorrelation is one of the many aspects that must be considered, which is an important thing to keep in mind.</p>
+</section>
+<section id="reflections" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">7.3</span> Reflections</h2>
+<p>This week we have observed the assessment of accuracy in remote sensing and procedures to improve and correctly handle this field.</p>
+<p>Important messages to take home are:</p>
+<ul>
+<li>just because one measurement is widely used does not mean it is an appropriate one - we must consider whether the coefficients that we have are actually valid</li>
+<li>spatial autocorrelation must be considered when conducting classification - this is a new perspective that is unique when we are to handle spatial data in particular</li>
+</ul>
+<p>Even though this part does is not always our main interest, it is an important phase within our data processing pipeline that seeks to achieve other goals. Since accuracy is an inevitable aspect of academic research, we must keep in mind how to analyse the data correctly and with precision.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-foody2020" class="csl-entry" role="listitem">
+Foody, Giles M. 2020. <span>“Explaining the Unsuitability of the Kappa Coefficient in the Assessment and Comparison of the Accuracy of Thematic Maps Obtained by Image Classification.”</span> <em>Remote Sensing of Environment</em> 239 (March): 111630. <a href="https://doi.org/10.1016/j.rse.2019.111630">https://doi.org/10.1016/j.rse.2019.111630</a>.
+</div>
+<div id="ref-lovelace2019" class="csl-entry" role="listitem">
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. 2019. <em>Chapter 12 <span>Statistical</span> Learning <span></span> <span>Geocomputation</span> with <span>R</span></em>.
+</div>
+<div id="ref-nowosad2021" class="csl-entry" role="listitem">
+Nowosad, Jakub, and Tomasz Stepinski. 2021. <span>“Generalizing the <span>Simple Linear Iterative Clustering</span> (<span>SLIC</span>) Superpixels.”</span> https://nowosad.github.io/giscience-2021/.
+</div>
+<div id="ref-plaza2002" class="csl-entry" role="listitem">
+Plaza, A., P. Martinez, R. Perez, and J. Plaza. 2002. <span>“Spatial/Spectral Endmember Extraction by Multidimensional Morphological Operations.”</span> <em>IEEE Transactions on Geoscience and Remote Sensing</em> 40 (9): 2025–41. <a href="https://doi.org/10.1109/TGRS.2002.802494">https://doi.org/10.1109/TGRS.2002.802494</a>.
+</div>
+<div id="ref-roberts2017" class="csl-entry" role="listitem">
+Roberts, David R., Volker Bahn, Simone Ciuti, Mark S. Boyce, Jane Elith, Gurutzeta Guillera-Arroita, Severin Hauenstein, et al. 2017. <span>“Cross-Validation Strategies for Data with Temporal, Spatial, Hierarchical, or Phylogenetic Structure.”</span> <em>Ecography</em> 40 (8): 913–29. <a href="https://doi.org/10.1111/ecog.02881">https://doi.org/10.1111/ecog.02881</a>.
+</div>
+<div id="ref-rozenstein2011" class="csl-entry" role="listitem">
+Rozenstein, Offer, and Arnon Karnieli. 2011. <span>“Comparison of Methods for Land-Use Classification Incorporating Remote Sensing and <span>GIS</span> Inputs.”</span> <em>Applied Geography</em> 31 (2): 533–44. <a href="https://doi.org/10.1016/j.apgeog.2010.11.006">https://doi.org/10.1016/j.apgeog.2010.11.006</a>.
+</div>
+<div id="ref-wilber2022" class="csl-entry" role="listitem">
+Wilber, Jared. 2022a. <span>“Precision and <span>Recall</span>.”</span> <em>MLU-Explain</em>. https://mlu-explain.github.io/precision-recall/.
+</div>
+<div id="ref-wilber2022a" class="csl-entry" role="listitem">
+———. 2022b. <span>“<span>ROC</span> and <span>AUC</span>.”</span> <em>MLU-Explain</em>. https://mlu-explain.github.io/roc-auc/.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
