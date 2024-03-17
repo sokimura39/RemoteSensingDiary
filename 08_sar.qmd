@@ -1,0 +1,50 @@
+# Synthetic Aperture Radar (SAR)
+
+## Summary
+
+### Overview
+
+### Polarisation
+
+Polarisation is the orientation of the electromagnetic fields in relation to the direction of the wave - this can be classified as either **horizontal** or **vertical**.
+
+{{< video https://svs.gsfc.nasa.gov/vis/a000000/a004500/a004580/EMWaveLinear_tourX2Oblique.HD1080i_p30.mp4 >}}
+
+Video illustration of electromagnetic waves. Video sourced from @nasasscientificvisualisationstudio2017
+
+A SAR satellite can transmit and receive horizontal and vertical waves. The four combinations of transmission and reception possible as follows:
+
+- **VV**: Vertical transmission, Vertical reception 
+- **VH**: Vertical transmission, Horizontal reception 
+- **HV**: Horizontal transmission, Vertical reception 
+- **HH**: Horizontal transmission, Horizontal reception 
+
+HV and VH - those with different orientation for transmission and reception are called *cross-polarised* reflectance.
+
+Different land covers reflect them in different behaviours - this enables us to identify the land covers. 
+
+| Type | Explanation | Scattering Strength |
+| --- | --- | --- |
+| Rough surface scattering | Reflection from bare soil or water - most sensitive to VV | $|S_{VV}| > |S_{HH}| > |S_{VH}|, |S_{HV}|$ |
+| Double bounce scattering | Reflection caused by buildings or standing structures, bouncing twice on the ground and an upright surface - most sensitive to HH | $|S_{HH}| > |S_{VV}| > |S_{VH}|, |S_{HV}|$ |
+| Volume scattering | Reflections from leaves or forest canopy - most sensitive to VH or HV | $|S_{VH}|, |S_{HV}| > |S_{VV}|, |S_{HH}|$ | 
+
+
+: Scattering strengths $|S|$ of different land covers
+
+The different types of reflections are illustrated below.
+
+![Different types of scattering occuring at different land covers [@nasaearthsciencedatasystems2020a]](https://www.earthdata.nasa.gov/s3fs-public/imported/SARPolarization.jpg?VersionId=mSa4j.XwWY8P_9Y0fxw9Ycp0FjGxLDaY)
+
+One extra point to note is that the wavelength also affects the reflection. A shorter wavelengths will be easily scattered by top layers of surface cover, while the longer wavelengths are capable to penetrate through. If observing forest canopy, longer bands might penetrate the leaves onto the ground, leading in more double bounce scattering than shorter wavelengths returning volume scattering.
+
+### Interferometry
+
+
+## Applications
+
+## Reflection
+
+
+
+

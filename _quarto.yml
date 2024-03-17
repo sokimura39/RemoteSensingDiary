@@ -15,6 +15,7 @@ book:
     - 05_gge.qmd
     - 06_classification.qmd
     - 07_accuracy.qmd
+    - 08_sar.qmd
     - 99_references.qmd
 
 bibliography: learning_diary.bib
