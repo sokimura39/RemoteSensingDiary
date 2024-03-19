@@ -6,7 +6,7 @@ bibliography: learning_diary.bib
 
 ## Summary
 
-**Remote Sensing**: acquiring information from a distance [@nasa2019]. There is a huge number of satellites carrying sensors that observe the earth.
+**Remote Sensing**: acquiring information from a distance [@nasaearthsciencedatasystems2019]. There is a huge number of satellites carrying sensors that observe the earth.
 
 ### Characteristics of Satellite Imagery
 
