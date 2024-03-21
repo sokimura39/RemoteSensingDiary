@@ -17,6 +17,15 @@ book:
     - 07_accuracy.qmd
     - 08_sar.qmd
     - 99_references.qmd
+  sidebar:
+    title: "Soki Kimura's Remote Sensing Learning Diary"
+    style: "floating"
+    background: "light"
+    tools:
+      - icon: github
+        href: https://github.com/sokimura39/RemoteSensingDiary
+      - icon: linkedin
+        href: https://www.linkedin.com/in/soki-kimura/
 
 bibliography: learning_diary.bib
 

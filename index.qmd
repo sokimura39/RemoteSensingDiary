@@ -4,12 +4,11 @@ Welcome to the Remote Sensing Learning Diary! This is where I will update my pro
 
 ## About me
 
-![Me at Karatsu, Saga, Japan during a first real trip on a motorcycle after I got my license. This place has the best squids in the world.](images/soki_kimura.jpg){width=60%}
+![Me at Karatsu, Saga, Japan during a first real trip on a motorcycle after I got my license. This place has the best squids in the world.](images/soki_kimura.jpg){width="60%"}
 
 My name is Soki Kimura, a master's student at [the Bartlett Centre for Advanced Spatial Analysis](https://www.ucl.ac.uk/bartlett/casa/bartlett-centre-advanced-spatial-analysis) at University College London.
 
-I am interested in bridging the architectural design-based and the data-oriented approach of urban planning and design.
-I have experience as a planner / civil engineer in the public sector in Japan, before commencing the master's course in London.
+I am interested in bridging the architectural design-based and the data-oriented approach of urban planning and design. I have experience as a planner / civil engineer in the public sector in Japan, before commencing the master's course in London.
 
 My interest toward cities probably started building up playing [SimCity 4](https://www.ea.com/en-gb/games/simcity) - maybe when I was 7 years old. Building cities and looking at how well it was performing, zoning areas and trying to make private development happen, all of that topped up with pleasing music was my first interaction with spatial data.
 
