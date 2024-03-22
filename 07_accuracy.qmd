@@ -10,12 +10,12 @@ This week we focus on measuring the accuracy of the classification, and object-b
 
 The accuracy measures for remote sensing (and machine learning in general) is based upon comparing the positive / negative classifications to what the values actually were. The four possibilities that are considered can be organised as the following table.
 
-| | Actually Positive | Actually Negative | Accuracy Measure | Error |
-| --- | --- | --- | --- | --- |
-| **Positively Classified** | True Positive | False Positive | User's Accuracy (Precision) | Commission Error | 
-| **Negatively Classified** | False Negative | True Negative | Negative Predictive Value | False Ommision Rate |
-| **Accuracy Measure** | Producer's Accuracy (Recall) | True Negative Rate | | |
-| **Error** | Omission Error | False Positive Rate | | |
+|                           | Actually Positive            | Actually Negative   | Accuracy Measure            | Error               |
+|---------------|---------------|---------------|---------------|---------------|
+| **Positively Classified** | True Positive                | False Positive      | User's Accuracy (Precision) | Commission Error    |
+| **Negatively Classified** | False Negative               | True Negative       | Negative Predictive Value   | False Ommision Rate |
+| **Accuracy Measure**      | Producer's Accuracy (Recall) | True Negative Rate  |                             |                     |
+| **Error**                 | Omission Error               | False Positive Rate |                             |                     |
 
 : Classification accuracies and errors
 
@@ -24,7 +24,6 @@ The producer's accuracy is the rate of pixels correctly positively identified to
 $$
 \text{Producer's Accuracy} = \frac{\text{TP}}{\text{TP}+\text{FN}}
 $$
-
 
 On the other hand, the user's accuracy defines the ratio of correctly identified pixels within the values that are classified as positive. This is the accuracy from the user's perspective, as the classified data is taken as the dividend.
 
@@ -38,8 +37,7 @@ $$
 \text{Overall Accuracy} = \frac{\text{TP}+\text{TN}}{\text{TP}+\text{FP}+\text{TN}+\text{FN}}
 $$
 
-From this overall accuracy measures, a widely used but inconsistent coefficient, the **kappa coefficient**, can be calculated. This values compares the accuracy to a randomly classified value.
-When $p_o$ is the overall accuracy and $p_e$ the expected accuracy when classified randomly, the kappa coefficient $\kappa$ can be calculated as:
+From this overall accuracy measures, a widely used but inconsistent coefficient, the **kappa coefficient**, can be calculated. This values compares the accuracy to a randomly classified value. When $p_o$ is the overall accuracy and $p_e$ the expected accuracy when classified randomly, the kappa coefficient $\kappa$ can be calculated as:
 
 $$
 \kappa = \frac{p_o-p_e}{1-p_e}
@@ -58,7 +56,7 @@ $$
 
 Another measure is the area under the ROC (Receiver Operating Characteristics) curve. The ROC curve is an indicator of the classification characteristics with false positive rates on the x axis and true positive rates on the y axis.
 
-![ROC curve, excerpt from lecture slide. Originally from @wilber2022a](https://andrewmaclachlan.github.io/CASA0023-lecture-7/img/ROC.png)
+![ROC curve, excerpt from lecture slide. Originally from @wilber2022a](https://andrewmaclachlan.github.io/CASA0023-lecture-7/img/ROC.png){width=70%}
 
 The area under this curve (AUC) can be a measurement of the classification method, where a larger area indicates a better classification technique. A random classification will have an AUC of 0.5, and a perfect classification will have a value of 1.
 
@@ -66,9 +64,9 @@ The area under this curve (AUC) can be a measurement of the classification metho
 
 As with other machine learning, the training data and testing data must be different datasets. The following is a list of common procedures to generate training and testing data.
 
-- Train-test split: leaving a certain percentage of the dataset for testing, and not use for training
-- Cross-validation: split the dataset into $k$ parts, leave one segment at a time to test with model trained with the remainder
-- Leave one out cross-validation: an extreme example of the above, just leaving one observation at a time
+-   Train-test split: leaving a certain percentage of the dataset for testing, and not use for training
+-   Cross-validation: split the dataset into $k$ parts, leave one segment at a time to test with model trained with the remainder
+-   Leave one out cross-validation: an extreme example of the above, just leaving one observation at a time
 
 Spatial autocorrelation is an important factor that must be considered in this process, but the above mentioned techniques all do not consider this when applied naively. Having the testing data very close to the training data is an inappropriate setting, as it is very likely to have the similar characteristics as the training dataset. A **spatial cross-validation** considers the spatial distribution of the training and testing datasets, taking a spatial subset of the dataset to keep for testing.
 
@@ -82,36 +80,31 @@ $$
 d = \sqrt{\left( \frac{d_c}{m} \right)^2 + \left( \frac{d_s}{S} \right)^2}
 $$
 
-where 
-- $d_c$ spectral distance
-- $m$ compactness parameter
-- $d_s$ spatial distance
-- $S$ interval between initial clusters
+where - $d_c$ spectral distance - $m$ compactness parameter - $d_s$ spatial distance - $S$ interval between initial clusters
 
 Improved models for considering other distance measures (other than Euclidian) are created and implemented under the `Supercells` package.
 
 The centroid is recalculated after the reclassification, and the process is iterated over multiple times (usually 5 - 10) to achieve the final output of classifications.
 
-![Example of the SLIC method, excerpt from @nowosad2021](https://jakubnowosad.com/giscience-2021/figs/ga.gif)
+![Example of the SLIC method, excerpt from @nowosad2021](https://jakubnowosad.com/giscience-2021/figs/ga.gif){width=50%}
 
-Classification algorithms are overlaid for each of the clusters rather than focusing on individual clusters. 
+Classification algorithms are overlaid for each of the clusters rather than focusing on individual clusters.
 
 ### Sub-pixel analysis
 
-In contrast, sub-pixel analysis tries to identify the mixture within an area represented by a single pixel. 
+In contrast, sub-pixel analysis tries to identify the mixture within an area represented by a single pixel.
 
 Sub-pixel analysis assumes the data a pixel obtains is a combination of multiple pure land covers - *endmembers* - mixed in a certain ratio, as illustrated below.
 
-![Illustration of sub-pixel analysis, excerpt from @plaza2002](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/36/22434/1046852/1046852-fig-1-source-large.gif)
+![Illustration of sub-pixel analysis, excerpt from @plaza2002](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/36/22434/1046852/1046852-fig-1-source-large.gif){width=70%}
 
-When the pixel values for each of the endmembers are observed as $p_{i\lambda}$, the mixed spectrum $p_{\lambda}$can be broken down as 
+When the pixel values for each of the endmembers are observed as $p_{i\lambda}$, the mixed spectrum $p_{\lambda}$can be broken down as
 
 $$
 p_{\lambda} = \sum_i{\left( p_{i\lambda}\cdot f_i \right)}+e_\lambda
-$$
-where $f_i$ is the fractional cover for each of the endmembers, and $e_{\lambda}$ being the model error. 
+$$ where $f_i$ is the fractional cover for each of the endmembers, and $e_{\lambda}$ being the model error.
 
-A common model used in the urban context is the VIS model, where the endmembers **V**egetation, **I**mpervious surface, and **S**oil are considered. 
+A common model used in the urban context is the VIS model, where the endmembers **V**egetation, **I**mpervious surface, and **S**oil are considered.
 
 Under this model, when the pixel values for each of the $k$ bands are expressed as
 
@@ -201,11 +194,11 @@ These research papers show the two aspects of accuracy in literature - the first
 
 ## Reflections
 
-This week we have observed the assessment of accuracy in remote sensing and procedures to improve and correctly handle this field. 
+This week we have observed the assessment of accuracy in remote sensing and procedures to improve and correctly handle this field.
 
 Important messages to take home are:
 
-- just because one measurement is widely used does not mean it is an appropriate one - we must consider whether the coefficients that we have are actually valid
-- spatial autocorrelation must be considered when conducting classification - this is a new perspective that is unique when we are to handle spatial data in particular
+-   just because one measurement is widely used does not mean it is an appropriate one - we must consider whether the coefficients that we have are actually valid
+-   spatial autocorrelation must be considered when conducting classification - this is a new perspective that is unique when we are to handle spatial data in particular
 
 Even though this part does is not always our main interest, it is an important phase within our data processing pipeline that seeks to achieve other goals. Since accuracy is an inevitable aspect of academic research, we must keep in mind how to analyse the data correctly and with precision.

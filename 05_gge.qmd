@@ -2,7 +2,7 @@
 
 ## Summary
 
-[Google Earth Engine](https://earthengine.google.com/) is a cloud-based online platform providing access to huge amounts of analysis-ready data and high-performing computing resources [@gorelick2017a]. The ability to access to both large data and the computational power capable of handling it this enables large-scale analysis that is otherwise impossible using individual computers. It also allows to publish applications that end-users can directly interact with. This vastly increases the potential audience and the data available to them, having the potential to change decisions in many levels.
+[Google Earth Engine](https://earthengine.google.com/) is a cloud-based online platform providing access to huge amounts of analysis-ready data and high-performing computing resources [@gorelick2017]. The ability to access to both large data and the computational power capable of handling it this enables large-scale analysis that is otherwise impossible using individual computers. It also allows to publish applications that end-users can directly interact with. This vastly increases the potential audience and the data available to them, having the potential to change decisions in many levels.
 
 In terms of analysis, one important factor of Google Earth Engine is that we no longer have to worry too much about spatial resolutions and merging data. The spatial resolution is defined by the output resolution, and it automatically aggregates the data to match the desired output. The datasets organised into image collections enable simple filtering, merging and aggregating of multiple imageries.
 
